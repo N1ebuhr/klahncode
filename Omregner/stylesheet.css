@@ -1,0 +1,133 @@
+body {
+    background-color: lightblue;
+}
+
+ul {
+    float: top;
+}
+
+.btns {
+    display: block;
+    width: auto;
+    float: left;
+    background-color: lightblue;
+    margin: 8px 0 32px 0;
+}
+
+li {
+    display: block;
+    width: inherit;
+}
+
+.output {
+    width: 85%;
+}
+
+.li1 {
+    display: inline-block;
+    width: 80%;
+}
+
+.li2 {
+    display: inline-block;
+    width: 40%;
+    margin: 0 10px 0 0;
+}
+
+.li3 {
+    display: inline-block;
+    margin: 0;
+    width: 20%;
+}
+
+.text {
+    width: 100%;
+}
+
+.to {
+    margin: 10px;
+}
+
+.liBtn {
+    float: top;
+}
+
+
+
+.Btn {
+    float: none;
+    padding: 4px;
+    margin: 0;
+    background-color: black;
+    color: gold;
+    font-family: -webkit-pictograph;
+    font-size: large;
+    border: 1px solid gold;
+    width: -webkit-fill-available;
+}
+
+
+
+.liSpacer {
+    color: yellow;
+    font-family: sans-serif;
+    font-size: 125%;
+    text-align: center;
+}
+
+.cal {
+    display: none;
+    position: inherit;
+    float: left;
+    margin: 8px;
+    width: 50%;
+    background-color: black;
+    color: gold;
+    border: 2px solid gold;
+	border-radius: 16px;
+    padding: 8px;
+}
+
+.li4 {
+    display: inline-block;
+    margin: 0;
+    width: 20%;
+}
+
+
+
+.ParaLengArea {
+    display: none;
+}
+
+
+
+#paraSideArea {
+    display: none;
+}
+
+#paraAngArea {
+    display: none;
+}
+
+#rumDiagArea {
+    display: none;
+}
+
+#rumAngArea {
+    display: none
+}
+
+#rumCirArea {
+    display: none;
+}
+
+li.calArea {
+    display: table-cell;
+    margin: 6px;
+    padding: 4px;
+}
+
+ul.calArea {
+    display: cell;
+}

@@ -1,0 +1,2222 @@
+<! DOCTYPE HTML >
+<html>
+<header>
+    <title>Omregner</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</header>
+	<script src="BigInteger.js-master/BigInteger.min.js"></script>
+<script src="js-big-decimal-master/dist/web/js-big-decimal.min.js"></script>
+<script src="jquery-3.2.1.min.js"></script>
+<script src="buttons.js"></script>
+<script src="calculators.js"></script>
+
+<body>
+    <ul>
+        <! BUTTONS!!!! YAAAY! >
+        <ul class="btns">
+            <li class="liBtn"><input class="Btn" type="button" id="areaBtn" value="Areal" onClick="openCal('areaCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="illumBtn" value="Belysning" onClick="openCal('illumCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="fulconBtn" value="Brændstofsforbrug" onClick="openCal('fuelConCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="dataBtn" value="Data" onClick="openCal('dataCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="densityBtn" value="Densitet" onClick="openCal('densCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="dynviBtn" value="Dynamisk Viskositet" onClick="openCal('dynViCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="powerBtn" value="Effekt" onClick="openCal('powerCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="elcharBtn" value="Elektrisk Strøm" onClick="openCal('elCharCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="energyBtn" value="Energi" onClick="openCal('energyCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="frequencyBtn" value="Frekvens" onClick="openCal('freqCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="glucoseBtn" value="Glucose" onClick="openCal('glucoseCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="speedBtn" value="Hastighed" onClick="openCal('speedCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="calorieBtn" value="Kalorie" onClick="openCal('calorieCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="kinVisBtn" value="Kinematisk Viskositet" onClick="openCal('kinVisCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="forceBtn" value="Kraft" onClick="openCal('forceCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="radioacBtn" value="Radioaktivitet" onClick="openCal('radCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="lengthBtn" value="Længde" onClick="openCal('lengthCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="massBtn" value="Masse" onClick="openCal('massCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="torqueBtn" value="Moment" onClick="openCal('torqueCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="inertiaBtn" value="Inertimoment" onClick="openCal('inertiaCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="prefixBtn" value="Præfixer" onClick="openCal('prefixCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="radabsBtn" value="Radioaktivitet Absorberet" onClick="openCal('radAbsCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="currentBtn" value="Strøm" onClick="openCal('currentCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="volflowBtn" value="Strømningsmængde" onClick="openCal('volFlowCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="strenghtBtn" value="Styrke" onClick="openCal('strengthCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="numbersBtn" value="Tal" onClick="openCal('numberCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="temperatureBtn" value="Temperatur" onClick="openCal('temperatureCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="timeBtn" value="Tid" onClick="openCal('timeCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="pressureBtn" value="Tryk" onClick="openCal('pressureCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="vacuumBtn" value="Vakum" onClick="openCal('vacuumCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="angleBtn" value="Vinkler" onClick="openCal('angleCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="volumeBtn" value="Volumen" onClick="openCal('volumeCal')"></li>
+            <li class="liSpacer">Andet</li>
+            <li class="liBtn"><input class="Btn" type="button" id="bmiBtn" value="BMI Udregner" onClick="openCal('bmiCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="hexdecbinBtn" value="Hex/Decimal/Binær" onClick="openCal('hexDecBinCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="percentBtn" value="Procent" onClick="openCal('percentCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="shoesizeBtn" value="Sko Størrelser" onClick="openCal('shoeCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="paceBtn" value="Tempo" onClick="openCal('paceCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="timezoneBtn" value="Tiszoner" onClick="openCal('timezoneCal')"></li>
+            <li class="liBtn"><input class="Btn" type="button" id="ClothingBtn" value="Tøj Størrelser" onClick="openCal('clotheCal')"></li>
+            <li style=""><input type="text" id="closeCal" class="text" value="" style="display: none;"></li>
+        </ul>
+
+        <! area calculator >
+        <ul class="cal" id="areaCal" value="arealCal">
+            <h1 style="text-align: center; padding: 0 12%;">Arealomregner</h1>
+            <ul>
+                <li class="li2">
+                    <input type="text" id="inputArea" class="text" onchange="convert('inputArea','outputArea','#areaFrom','#areaTo')">
+                </li>
+                <li class="li3">
+                    <select class="areaFrom" id="areaFrom" onchange="convert('inputArea','outputArea','#areaFrom','#areaTo')">
+                        <option disabled>--Si Enheder--</option>
+                        <option value="0.000001">Kvadratmilimeter - mm&sup2;</option>
+                        <option value="0.0001">Kvadratcentimeter - cm&sup2;</option>
+                        <option value="0.01">Kvadratdecimeter - dm&sup2;</option>
+                        <option value="1">Kvadratmeter - m&sup2;</option>
+                        <option value="1000">Hektar - ha</option>
+                        <option value="100000">Kvadratkilometer - km&sup3;</option>
+                        <option disabled>--Imperial Standard--</option>
+                        <option value="0.00064516">Square Inch - in&sup2;</option>
+                        <option value="0.092903">Square Foot - ft&sup2;</option>
+                        <option value="0.836127">Square Yard - yd&sup2;</option>
+                        <option value="25.29285264">Perch - Square Perch</option>
+                        <option value="1011.7141056">Rood</option>
+                        <option value="4046.8564224">Arche</option>
+                        <option value="5350">Amerikansk Fodboldbane</option>
+                        <option value="2589988.1">Sguare Miles - mi&sup2;</option>
+                        <option disabled>--Danske Enheder--</option>
+                        <option value="0.39">Kvadratalen</option>
+                        <option value="9.85">Rode</option>
+                        <option value="14.37">Penning</option>
+                        <option value="5.516">Tønde Land</option>
+                        <option value="172.38">Fjerdingkar</option>
+                        <option value="689.5">Skæppe</option>
+                        <option value="56738255">Kvadratmil</option>
+                    </select>
+                </li>
+                <li>
+                    <a class="to">Til</a>
+                    <button onclick="switchOptions('#areaFrom','#areaTo'),convert('inputArea','outputArea','#areaFrom','#areaTo')">Skift</button>
+                </li>
+                <li class="li2">
+                    <input type="text" id="outputArea" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="areaTo" id="areaTo" onchange="convert('inputArea','outputArea','#areaFrom','#areaTo')">
+                        <option disabled>--Si Enheder--</option>
+                        <option value="0.000001">Kvadratmilimeter - mm&sup2;</option>
+                        <option value="0.0001">Kvadratcentimeter - cm&sup2;</option>
+                        <option value="0.01">Kvadratdecimeter - dm&sup2;</option>
+                        <option value="1">Kvadratmeter - m&sup2;</option>
+                        <option value="1000">Hektar - ha</option>
+                        <option value="100000">Kvadratkilometer - km&sup3;</option>
+                        <option disabled>--Imperial Standard--</option>
+                        <option value="0.00064516">Square Inch - in&sup2;</option>
+                        <option value="0.092903">Square Foot - ft&sup2;</option>
+                        <option value="0.836127">Square Yard - yd&sup2;</option>
+                        <option value="25.29285264">Perch - Square Perch</option>
+                        <option value="1011.7141056">Rood</option>
+                        <option value="4046.8564224">Arche</option>
+                        <option value="5350">Amerikansk Fodboldbane</option>
+                        <option value="2589988.1">Sguare Miles - mi&sup2;</option>
+                        <option disabled>--Danske Enheder--</option>
+                        <option value="0.39">Kvadratalen</option>
+                        <option value="9.85">Rode</option>
+                        <option value="14.37">Penning</option>
+                        <option value="5.516">Tønde Land</option>
+                        <option value="172.38">Fjerdingkar</option>
+                        <option value="689.5">Skæppe</option>
+                        <option value="56738255">Kvadratmil</option>
+                    </select>
+                </li>
+                <li class="output">
+                    <input type="button" value="Udregn" onclick="convert('inputArea','outputArea','#areaFrom','#areaTo')" class="output">
+                </li>
+            </ul>
+
+            <! Square >
+            <ul class="calArea">
+                <h2 style="text-align: center;">Areal af Kvadrat</h2>
+                <li class="calArea">
+                    <a style="display: table-cell;" class="to">Sidelængde</a>
+                    <input style="display: table-cell;" type="text" id="arSqIn" onchange="areaSquare()">
+                </li>
+                <li class="calArea">
+                    <a style="display: table-cell;" class="to">Areal</a>
+                    <input style="display: table-cell;" type="text" id="arSqOut" readonly>
+                </li>
+            </ul>
+
+            <! Rectangle >
+            <ul class="calArea">
+                <h2 style="text-align: center;">Areal af Rektangel</h2>
+                <li class="calArea">
+                    <a class="to">Sidelængde a</a>
+                    <input type="text" id="arReInA" onchange="areaRectangle()">
+                </li>
+                <li class="calArea">
+                    <a class="to">Sidelængde b</a>
+                    <input type="text" id="arReInB" onchange="areaRectangle()">
+                </li>
+                <li class="calArea">
+                    <a class="to">Areal</a>
+                    <input type="text" id="arReOut" readonly>
+                </li>
+            </ul>
+
+            <! Triangle >
+            <ul class="calArea">
+                <h2 style="text-align:center;">Areal af Trekant</h2>
+                <li class="calArea">
+                    <a class="to">Højden</a>
+                    <input type="text" id="arTriHi" onchange="areaTriangle()">
+                </li>
+                <li class="calArea">
+                    <a class="to">Grundlinjen</a>
+                    <input type="text" id="arTriGr" onchange="areaTriangle()">
+                </li>
+                <li class="calArea">
+                    <a class="to">Areal</a>
+                    <input type="text" id="arTriOut" readonly>
+                </li>
+            </ul>
+
+            <! Circle >
+            <ul class="calArea">
+                <h2 style="text-align: center;">Areal af Cirkel</h2>
+                <li class="calArea">
+                    <select class="radDim" onchange="areaCircle()">
+                        <option value="1">Radius</option>
+                        <option value="0.5">Diameter</option>
+                    </select>
+                    <input type="text" id="arCirIn" onchange="areaCircle()">
+
+                </li>
+                <li class="calArea">
+                    <a class="to">Areal</a>
+                    <input type="text" id="arCirOut" readonly>
+                </li>
+            </ul>
+
+            <! Parallelogram >
+            <ul class="calArea">
+                <h2 style="text-align: center;">Areal af Parallelogram</h2>
+                <li class="calArea">
+                    <select class="degLen" onchange="areaDegLen('paraSideArea','paraAngArea')">
+                        <option>Vælg</option>
+                        <option value="1">Areal med højde og grundlinje</option>
+                        <option value="2">Areal med sidelængde og vinkel</option>
+                    </select>
+                </li>
+                <ul id="paraSideArea">
+                    <li class="calArea">
+                        <a class="to">Grundlinje</a>
+                        <input type="text" id="arParSidGr" onchange="areaParaSid()">
+                    </li>
+                    <li class="calArea">
+                        <a class="to">Højde</a>
+                        <input type="text" id="arParSidHi" onchange="areaParaSid()">
+                    </li>
+                </ul>
+                <ul id="paraAngArea">
+                    <li class="calArea">
+                        <a class="to">Sidelængde a</a>
+                        <input type="text" id="arParAngAIn" onchange="areaParAng()">
+                    </li>
+                    <li class="calArea">
+                        <a class="to">Sidelængde b</a>
+                        <input type="text" id="arParAngBIn" onchange="areaParAng()">
+                    </li>
+                    <li class="calArea">
+                        <a class="to">Vinkel</a>
+                        <input type="text" id="arParAngIn" onchange="areaParAng()">
+                    </li>
+                </ul>
+                <li class="calArea">
+                    <a>Areal</a>
+                    <input type="text" id="arParOut" readonly>
+                </li>
+            </ul>
+
+            <! Rump >
+            <ul class="calArea">
+                <h2 style="text-align: center;">Areal af Rombe</h2>
+                <select class="diagAngCir" onchange="diagAngCir()">
+                    <option>Vælg</option>
+                    <option value="1">Areal fra diagonallængder</option>
+                    <option value="2">Areal fra sidelængde og vinkel</option>
+                    <option value="3">Areal fra sidelængde og indskrevne cirkel</option>
+                </select>
+                <ul id="rumDiagArea">
+                    <li class="calArea">
+                        <a class="to">Diagonallængde<sub>1</sub></a>
+                        <input type="text" id="arRumpDig1In" onchange="areaRumpDig()">
+                    </li>
+                    <li class="calArea">
+                        <a class="to">Diagonallængde<sub>2</sub></a>
+                        <input type="text" id="arRumpDig2In" onchange="areaRumpDig()">
+                    </li>
+                </ul>
+                <ul id="rumAngArea">
+                    <li class="calArea">
+                        <a class="to">Sidelængde</a>
+                        <input type="text" id="arRumpAngSIn" onchange="areaRumpAng()">
+                    </li>
+                    <li class="calArea">
+                        <a class="to">Vinkel</a>
+                        <input type="text" id="arRumpAngAIn" onchange="areaRumpAng()">
+                    </li>
+                </ul>
+                <ul id="rumCirArea">
+                    <li class="calArea">
+                        <a class="to">Sidelængde</a>
+                        <input type="text" id="arRumpCirSIn" onchange="areaRumpCir()">
+                    </li>
+                    <li class="calArea">
+                        <a class="to">Radius</a>
+                        <input type="text" id="arRumpCirCIn" onchange="areaRumpCir()">
+                    </li>
+                </ul>
+                <li class="calArea">
+                    <a class="to">Areal</a>
+                    <input type="text" id="arRumpOut" readonly>
+                </li>
+            </ul>
+
+            <! Trapezium >
+            <ul class="calArea">
+                <h2 style="text-align: center;">Areal af Trapez</h2>
+                <li class="calArea">
+                    <a class="to">Sidelængde 1 </a>
+                    <input type="text" id="arTrap1In" onchange="areaTrapezium()">
+                </li>
+                <li class="calArea">
+                    <a class="to">Sidelængde 2</a>
+                    <input type="text" id="arTrap2In" onchange="areaTrapezium()">
+                </li>
+                <li class="calArea">
+                    <a class="to">Højde</a>
+                    <input type="text" id="arTrapHIn" onchange="areaTrapezium()">
+                </li>
+                <li class="calArea">
+                    <a class="to">Areal</a>
+                    <input type="text" id="arTrapOut">
+                </li>
+            </ul>
+        </ul>
+
+        <! Illumination Calculator>
+        <ul class="cal" id="illumCal" value="illumCal">
+            <h1 style="text-align: center; padding: 0 12%;">Belysning over Areal</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputIllum" class="text" onchange="convert('inputIllum','outputIllum','#illumFrom','#illumTo')">
+                </li>
+                <li class="li3">
+                    <select class="illumFrom" id="illumFrom" onchange="convertIllum('inputIllum','outputIllum','#illumFrom','#illumTo')">
+                        <option value="0.000000146">Lumen pr. Kvadratmeter - lm/m&sup2;</option>
+                        <option value="0.0000001460">lux - lx</option>
+                        <option value="0.00000014600">Meter-Candle - m·c</option>
+                        <option value="0.000000146000">Candella st pr. Kvadratmeter - cd.st/m&sup2;</option>
+                        <option value="0.00000157153">Lumen pr. Kvadratfod - lm/ft&sup2;</option>
+                        <option value="0.00000157153">Foot-candle - ft·c</option>
+                        <option value="0.00000628612">Flamme - flame</option>
+                        <option value="1.46E-10">Nox</option>
+                        <option value="0.00146">Lumen pr. Kvadratcentimeter - lm/cm&sup2;</option>
+                        <option value="0.001460">Phot - ph</option>
+                        <option value="0.0014600">Centimeter-candle - cm·c</option>
+                        <option value="1">Watt pr kvadratcentimeter - W/cm&sup2;</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#illumFrom','#illumTo'),convert('inputIllum','outputIllum','#illumFrom','#illumTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputIllum" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="illumTo" id="illumTo" onchange="convert('inputIllum','outputIllum','#illumFrom','#illumTo')">
+                        <option value="0.000000146">Lumen pr. Kvadratmeter - lm/m&sup2;</option>
+                        <option value="0.0000001460">lux - lx</option>
+                        <option value="0.00000014600">Meter-Candle - m·c</option>
+                        <option value="0.000000146000">Candella st pr. Kvadratmeter - cd.st/m&sup2;</option>
+                        <option value="0.00000157153">Lumen pr. Kvadratfod - lm/ft&sup2;</option>
+                        <option value="0.00000157153">Foot-candle - ft·c</option>
+                        <option value="0.00000628612">Flamme - flame</option>
+                        <option value="1.46E-10">Nox</option>
+                        <option value="0.00146">Lumen pr. Kvadratcentimeter - lm/cm&sup2;</option>
+                        <option value="0.001460">Phot - ph</option>
+                        <option value="0.0014600">Centimeter-candle - cm·c</option>
+                        <option value="1">Watt pr kvadratcentimeter - W/cm&sup2;</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convert('inputIllum','outputIllum','#illumFrom','#illumTo')" class="output">
+            </li>
+        </ul>
+
+        <! Fuel Consumption Calculator >
+        <ul class="cal" id="fuelConCal" value="fuelConCal">
+            <h1 style="text-align: center; padding: 0 12%;">Brændstofsforbrug</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputFuelCon" class="text" onchange="convert('inputFuelCon','outputFuelCon','#fuelConFrom','#fuelConTo')">
+                </li>
+                <li class="li3">
+                    <select class="fuelConFrom" id="fuelConFrom" onchange="convert('inputFuelCon','outputFuelCon','#fuelConFrom','#fuelConTo')">
+                        <option disabled>--Si - Enheder--</option>
+                        <option value="1">Kilometer pr. Liter - km/L</option>
+                        <option value="100">Liter pr. 100kilometer - L/100km</option>
+                        <option disabled>--US Standard--</option>
+                        <option value="2.352146">Mil pr. Gallon (US) - mpg(US)</option>
+                        <option value="42.5144">Gallon(US) pr. 100mil - gal(US)/100mi</option>
+                        <option disabled>--UK Standard--</option>
+                        <option value="2.82481">Mil pr. Gallon (UK) - mpg(UK)</option>
+                        <option value="35.4006">Gallon(US) pr. 100mil - gal(UK)/100mi</option>
+                        <option disabled>--Blanede Enheder--</option>
+                        <option value="0.621371">Mil pr. Liter - mi/L</option>
+                        <option value="3.78541">Kilometer pr. Gallon(US) - km/gal(US)</option>
+                        <option value="4.54609">Kilometer pr. Gallon(UK) - km/gal(UK)</option>
+                        <option value="21.99692">Gallon(UK) pr. 100kilometer - gal(UK)/100km</option>
+                        <option value="26.4172">Gallon(US) pr. 100kilometer - gal(US)/100km</option>
+                        <option value="160.9344">Liter pr. 100mil - L/100mi</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#fuelConFrom','#fuelConTo'),convert('inputFuelCon','outputFuelCon','#fuelConFrom','#fuelConTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputFuelCon" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="fuelConTo" id="fuelConTo" onchange="convert('inputFuelCon','outputFuelCon','#fuelConFrom','#fuelConTo')">
+                        <option disabled>--Si - Enheder--</option>
+                        <option value="1">Kilometer pr. Liter - km/L</option>
+                        <option value="100">Liter pr. 100kilometer - L/100km</option>
+                        <option disabled>--US Standard--</option>
+                        <option value="2.352146">Mil pr. Gallon (US) - mpg(US)</option>
+                        <option value="42.5144">Gallon(US) pr. 100mil - gal(US)/100mi</option>
+                        <option disabled>--UK Standard--</option>
+                        <option value="2.82481">Mil pr. Gallon (UK) - mpg(UK)</option>
+                        <option value="35.4006">Gallon(US) pr. 100mil - gal(UK)/100mi</option>
+                        <option disabled>--Blanede Enheder--</option>
+                        <option value="0.621371">Mil pr. Liter - mi/L</option>
+                        <option value="3.78541">Kilometer pr. Gallon(US) - km/gal(US)</option>
+                        <option value="4.54609">Kilometer pr. Gallon(UK) - km/gal(UK)</option>
+                        <option value="21.99692">Gallon(UK) pr. 100kilometer - gal(UK)/100km</option>
+                        <option value="26.4172">Gallon(US) pr. 100kilometer - gal(US)/100km</option>
+                        <option value="160.9344">Liter pr. 100mil - L/100mi</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convert('inputFuelCon','outputFuelCon','#fuelConFrom','#fuelConTo')" class="output">
+            </li>
+			<table style="color: gold;">
+				<tr>
+					<th>Udregn brændstofsforbrug</th>
+				</tr>
+				<tr>
+				 	<td>Kilometer kørt</td>
+					<td><input type="text" id="fuelConLen" onchange="calFuelCon()"></td>
+				</tr>
+				<tr>
+					<td>Liter brændstof brugt</td>
+					<td><input type="text" id="fuelConLit" onchange="calFuelCon()"></td>
+				</tr>
+				<tr>
+					<td>Gns. Brændstofsforbrug</td>
+					<td><input type="text" id="fuelConOut" readonly></td>
+				</tr>
+			</table>
+        </ul>
+
+        <! Data Calculator >
+        <ul class="cal" id="dataCal" value="dataCal">
+            <h1 style="text-align: center; padding: 0 12%;">Data</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputData" class="text">
+                </li>
+                <li class="li3">
+                    <select class="dataFrom" id="dataFrom" onchange="convert('inputData','outputData','#dataFrom','#dataTo')">
+                        <option value="1">Bit</option>
+                        <option value="1024">Kibibit - Kibit</option>
+                        <option value="1048576">Mebibit - Mibit</option>
+                        <option value="1.07374E+9">Gibibit - Gibit</option>
+                        <option value="1E+3">Kilobit - kbit</option>
+                        <option value="1E+6">Megabit - Mbit</option>
+                        <option value="1E+9">Gigabit - Gbit</option>
+                        <option value="8">byte</option>
+                        <option value="8192">Kibibyte - KiB</option>
+                        <option value="8388608">Mebibyte - MiB</option>
+                        <option value="8.58993E+9">Gibibyte - GiB</option>
+                        <option value="8.79609E+12">Tebibyte - TiB</option>
+                        <option value="9.0072E+15">Pabibyte - PiB</option>
+                        <option value="8E+3">Kilobyte - kB</option>
+                        <option value="8E+6">Megatbyte - MB</option>
+                        <option value="8E+9">Gigabyte - GB</option>
+                        <option value="8E+12">Terabyte - TB</option>
+                        <option value="8E+15">Petabyte - PB</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#dataFrom','#dataTo'),convert('inputData','outputData','#dataFrom','#dataTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputData" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="dataTo" id="dataTo" onchange="convert('inputData','outputData','#dataFrom','#dataTo')">
+                        <option value="1">Bit</option>
+                        <option value="1024">Kibibit - Kibit</option>
+                        <option value="1048576">Mebibit - Mibit</option>
+                        <option value="1.07374E+9">Gibibit - Gibit</option>
+                        <option value="1E+3">Kilobit - kbit</option>
+                        <option value="1E+6">Megabit - Mbit</option>
+                        <option value="1E+9">Gigabit - Gbit</option>
+                        <option value="8">byte</option>
+                        <option value="8192">Kibibyte - KiB</option>
+                        <option value="8388608">Mebibyte - MiB</option>
+                        <option value="8.58993E+9">Gibibyte - GiB</option>
+                        <option value="8.79609E+12">Tebibyte - TiB</option>
+                        <option value="9.0072E+15">Pabibyte - PiB</option>
+                        <option value="8E+3">Kilobyte - kB</option>
+                        <option value="8E+6">Megatbyte - MB</option>
+                        <option value="8E+9">Gigabyte - GB</option>
+                        <option value="8E+12">Terabyte - TB</option>
+                        <option value="8E+15">Petabyte - PB</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convert('inputData','outputData','#dataFrom','#dataTo')" class="output">
+            </li>
+        </ul>
+
+        <! Density Calculator >
+        <ul class="cal" id="densCal" value="densCal">
+            <h1 style="text-align: center; padding: 0 12%;">Densitet</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputDens" class="text" onchange="convertDens()">
+                </li>
+                <li class="li3">
+                    <select class="densWeigFrom" id="densWeigFrom" onchange="convertDens()">
+                        <option disabled>--SI - Enheder--</option>
+                        <option value="1E-24">yoktogram - yg</option>
+                        <option value="1E-21">zeptogram - zg</option>
+                        <option value="1E-18">attogram - ag</option>
+                        <option value="1E-15">femtogram - fg</option>
+                        <option value="1E-12">pikogram - pg</option>
+                        <option value="1E-9">nanogram - ng</option>
+                        <option value="1E-6">mikrogram - &mu;g</option>
+                        <option value="1E-3">miligram - mg</option>
+                        <option value="1E-2">centigram - cg</option>
+                        <option value="1E-1">decigram - dg</option>
+                        <option value="1">gram - g</option>
+                        <option value="1000">kilogram - kg</option>
+                        <option value="1000000">ton - T</option>
+                        <option disabled>--Imperial-standard--</option>
+                        <option value="0.06479891">grain - gr</option>
+                        <option value="1.7718451953125">drachim - dr</option>
+                        <option value="28.349523125">ounce - oz</option>
+                        <option value="453.59237">pund - lb</option>
+                        <option value="6350.29318">stone - st</option>
+                        <option value="12700.58636">quater - qr</option>
+                        <option value="14593.90294">slug</option>
+                        <option value="50802.34544">hundredweight - cwt</option>
+                        <option value="1016046.9088">ton - t</option>
+                    </select>
+                    <a>pr.</a>
+                    <select class="densVolFrom" id="densVolFrom" onchange="convertDens()">
+                        <option disabled>--SI - Enheder--</option>
+                        <option value="1E-72">ym&sup3; - kubikyoctometer</option>
+                        <option value="1E-63">zm&sup3; - kubikzeptometer</option>
+                        <option value="1E-54">am&sup3; - kubikattometer</option>
+                        <option value="1E-45">fm&sup3; - kubikfemtometer</option>
+                        <option value="1E-36">pm&sup3; - kubikpikometer</option>
+                        <option value="1E-27">nm&sup3; - kubiknanometer</option>
+                        <option value="1E-18">&mu;m&sup3; - kubikmikrometer</option>
+                        <option value="1E-9">mm&sup3; - kubikmilimeter</option>
+                        <option value="1E-6">cm&sup3; - kubikcentimeter</option>
+                        <option value="1E-3">dm&sup3; - kubikdecimeter</option>
+                        <option value="1">m&sup3; - kubikmeter</option>
+                        <option value="1000000000">km&sup3; - kubikkilometer</option>
+                        <option value="0.000000001">&mu;l - mikroliter</option>
+                        <option value="0.000001">ml - mililiter</option>
+                        <option value="0.001">l - liter</option>
+                        <option value="0.1">hl - hektoliter</option>
+                        <option disabled>--Imperial Standard--</option>
+                        <option value="0.00002365882">cup</option>
+                        <option value="0.00002841306">fl oz(UK) - fluid ounce(UK)</option>
+                        <option value="0.00002957353">fl oz(US) - fluid ounce(US)</option>
+                        <option value="0.0001420653125">gi - gill</option>
+                        <option value="0.00001478677">tbs - tablespoon</option>
+                        <option value="0.00000492892">tsp - teaspoon</option>
+                        <option value="0.00001638706">in&sup3; - kubiktomme</option>
+                        <option value="0.02831685">ft&sup3; - kubikfod</option>
+                        <option value="0.765">yd&sup3; - kubikyard</option>
+                        <option value="4.168E+9">mi&sup3; - kubikmil</option>
+                        <option disabled>--UK Standard--</option>
+                        <option value="0.000568261">pt(UK) - pint(UK)</option>
+                        <option value="0.001136523">qt(UK) - quart(UK)</option>
+                        <option value="0.00454609">gal(UK) - gallon(UK)</option>
+                        <option value="0.0363687">UK.bu. - bushel(UK)</option>
+                        <option disabled>--US Standard</option>
+                        <option value="0.00055061">pt(US, dry) - pint(US, dry)</option>
+                        <option value="0.0004731765">pt(US, liquid) - pint(US, liquid)</option>
+                        <option value="0.000946353">qt(US) - quart(US)</option>
+                        <option value="0.00110122">qt(US, liquid) - quart(US, liquid)</option>
+                        <option value="0.00378541">gal(US) - gallon(US)</option>
+                        <option value="0.0352391">US.bu. - bushel(US)</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptionsDens(),convertDens()">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputDens" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="densWeigTo" id="densWeigTo" onchange="convertDens()">
+                        <option disabled>--SI - Enheder--</option>
+                        <option value="1E-24">yoktogram - yg</option>
+                        <option value="1E-21">zeptogram - zg</option>
+                        <option value="1E-18">attogram - ag</option>
+                        <option value="1E-15">femtogram - fg</option>
+                        <option value="1E-12">pikogram - pg</option>
+                        <option value="1E-9">nanogram - ng</option>
+                        <option value="1E-6">mikrogram - &mu;g</option>
+                        <option value="1E-3">miligram - mg</option>
+                        <option value="1E-2">centigram - cg</option>
+                        <option value="1E-1">decigram - dg</option>
+                        <option value="1">gram - g</option>
+                        <option value="1000">kilogram - kg</option>
+                        <option value="1000000">ton - T</option>
+                        <option disabled>--Imperial-standard--</option>
+                        <option value="0.06479891">grain - gr</option>
+                        <option value="1.7718451953125">drachim - dr</option>
+                        <option value="28.349523125">ounce - oz</option>
+                        <option value="453.59237">pund - lb</option>
+                        <option value="6350.29318">stone - st</option>
+                        <option value="12700.58636">quater - qr</option>
+                        <option value="14593.90294">slug</option>
+                        <option value="50802.34544">hundredweight - cwt</option>
+                        <option value="1016046.9088">ton - t</option>
+                    </select>
+                    <a>pr.</a>
+                    <select class="densVolTo" id="densVolTo" onchange="convertDens()">
+                        <option disabled>--SI - Enheder--</option>
+                        <option value="1E-72">ym&sup3; - kubikyoctometer</option>
+                        <option value="1E-63">zm&sup3; - kubikzeptometer</option>
+                        <option value="1E-54">am&sup3; - kubikattometer</option>
+                        <option value="1E-45">fm&sup3; - kubikfemtometer</option>
+                        <option value="1E-36">pm&sup3; - kubikpikometer</option>
+                        <option value="1E-27">nm&sup3; - kubiknanometer</option>
+                        <option value="1E-18">&mu;m&sup3; - kubikmikrometer</option>
+                        <option value="1E-9">mm&sup3; - kubikmilimeter</option>
+                        <option value="1E-6">cm&sup3; - kubikcentimeter</option>
+                        <option value="1E-3">dm&sup3; - kubikdecimeter</option>
+                        <option value="1">m&sup3; - kubikmeter</option>
+                        <option value="1000000000">km&sup3; - kubikkilometer</option>
+                        <option value="0.000000001">&mu;l - mikroliter</option>
+                        <option value="0.000001">ml - mililiter</option>
+                        <option value="0.001">l - liter</option>
+                        <option value="0.1">hl - hektoliter</option>
+                        <option disabled>--Imperial Standard--</option>
+                        <option value="0.00002365882">cup</option>
+                        <option value="0.00002841306">fl oz(UK) - fluid ounce(UK)</option>
+                        <option value="0.00002957353">fl oz(US) - fluid ounce(US)</option>
+                        <option value="0.0001420653125">gi - gill</option>
+                        <option value="0.00001478677">tbs - tablespoon</option>
+                        <option value="0.00000492892">tsp - teaspoon</option>
+                        <option value="0.00001638706">in&sup3; - kubiktomme</option>
+                        <option value="0.02831685">ft&sup3; - kubikfod</option>
+                        <option value="0.765">yd&sup3; - kubikyard</option>
+                        <option value="4.168E+9">mi&sup3; - kubikmil</option>
+                        <option disabled>--UK Standard--</option>
+                        <option value="0.000568261">pt(UK) - pint(UK)</option>
+                        <option value="0.001136523">qt(UK) - quart(UK)</option>
+                        <option value="0.00454609">gal(UK) - gallon(UK)</option>
+                        <option value="0.0363687">UK.bu. - bushel(UK)</option>
+                        <option disabled>--US Standard</option>
+                        <option value="0.00055061">pt(US, dry) - pint(US, dry)</option>
+                        <option value="0.0004731765">pt(US, liquid) - pint(US, liquid)</option>
+                        <option value="0.000946353">qt(US) - quart(US)</option>
+                        <option value="0.00110122">qt(US, liquid) - quart(US, liquid)</option>
+                        <option value="0.00378541">gal(US) - gallon(US)</option>
+                        <option value="0.0352391">US.bu. - bushel(US)</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convertDens()" class="output">
+            </li>
+        </ul>
+
+        <! Dynamic Viscosity Calculator >
+        <ul class="cal" id="dynViCal" value="dynViCal">
+            <h1 style="text-align: center; padding: 0 12%;">Dynamisk Viskositet</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputDynVi" class="text" onchange="convert('inputDynVi','outputDynVi','#dynViFrom','#dynViTo')">
+                </li>
+                <li class="li3">
+                    <select class="dynViFrom" id="dynViFrom" onchange="convert('inputDynVi','outputDynVi','#dynViFrom','#dynViTo')">
+                        <option value="478.79">Pundsekund pr. Kvadratfod - lbs/ft&sup2;</option>
+                        <option value="14.879">Pund pr. Footsekund - lb/fts</option>
+                        <option value="10">Newtonsekund pr. Kvadratmeter - Ns/m&sup2;</option>
+                        <option value="1">Poise</option>
+                        <option value="0.01">Centipoise - cP</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#dynViFrom','#dynViTo'),convert('inputDynVi','outputDynVi','#dynViFrom','#dynViTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputDynVi" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="dynViTo" id="dynViTo" onchange="convert('inputDynVi','outputDynVi','#dynViFrom','#dynViTo')">
+                        <option value="478.79">Pundsekund pr. Kvadratfod - lbs/ft&sup2;</option>
+                        <option value="14.879">Pund pr. Footsekund - lb/fts</option>
+                        <option value="10">Newtonsekund pr. Kvadratmeter - Ns/m&sup2;</option>
+                        <option value="1">Poise</option>
+                        <option value="0.01">Centipoise - cP</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convert('inputDynVi','outputDynVi','#dynViFrom','#dynViTo')" class="output">
+            </li>
+        </ul>
+
+        <! Power Calculator >
+        <ul class="cal" id="powerCal" value="powerCal">
+            <h1 style="text-align: center; padding: 0 12%;">Effekt</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputPower" class="text" onchange="convert('inputPower','outputPower','#powerFrom','#powerTo')">
+                </li>
+                <li class="li3">
+                    <select class="powerFrom" id="powerFrom" onchange="convert('inputPower','outputPower','#powerFrom','#powerTo')">
+                        <option value="0.001">Miliwatt - mW</option>
+                        <option value="1">Watt - W</option>
+                        <option value="1000">Kilowatt - kW</option>
+                        <option value="1000000">Megawatt - MW</option>
+                        <option value="1E+9">Gigawatt - GW</option>
+                        <option value="1E+12">Terawatt - TW</option>
+                        <option value="745.7">Hæstekrafter(mech.) - hk(mech.) - hp(mech.)</option>
+                        <option value="735.499">Hæstekrafter(metr.) - hk(metr.) - hp(metr.)</option>
+                        <option value="1.355818">Footpounds pr. sekund - fps</option>
+                        <option value="0.02259697">Footpounds pr. minut - fpm</option>
+                        <option value="17.58426">BTU pr. minut - btum</option>
+                        <option value="735.499">Pferdestärke - PS</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#powerFrom','#powerTo'),convert('inputPower','outputPower','#powerFrom','#powerTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputPower" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="powerTo" id="powerTo" onchange="convert('inputPower','outputPower','#powerFrom','#powerTo')">
+                        <option value="0.001">Miliwatt - mW</option>
+                        <option value="1">Watt - W</option>
+                        <option value="1000">Kilowatt - kW</option>
+                        <option value="1000000">Megawatt - MW</option>
+                        <option value="1E+9">Gigawatt - GW</option>
+                        <option value="1E+12">Terawatt - TW</option>
+                        <option value="745.7">Hæstekrafter(mech.) - hk(mech.) - hp(mech.)</option>
+                        <option value="735.499">Hæstekrafter(metr.) - hk(metr.) - hp(metr.)</option>
+                        <option value="1.355818">Footpounds pr. sekund - fps</option>
+                        <option value="0.02259697">Footpounds pr. minut - fpm</option>
+                        <option value="17.58426">BTU pr. minut - btum</option>
+                        <option value="735.499">Pferdestärke - PS</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convert('inputPower','outputPower','#powerFrom','#powerTo')" class="output">
+            </li>
+        </ul>
+
+        <! Electrical Current Calculator >
+        <ul class="cal" id="elCharCal" value="elCharCal">
+            <h1 style="text-align: center; padding: 0 12%;">Elektrisk Strøm</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputElChar" class="text" onchange="convert('inputElChar','outputElChar','#elCharFrom','#elCharTo')">
+                </li>
+                <li class="li3">
+                    <select class="elCharFrom" id="elCharFrom" onchange="convert('inputElChar','outputElChar','#elCharFrom','#elCharTo')">
+                        <option value="1.602176462E-19">Atomarladning - e</option>
+                        <option value="10.0">Abcoulomb - abC</option>
+                        <option value="1E-12">Picocoulomb - pC</option>
+                        <option value="3.335641E-10">Statcoulomb - stC</option>
+                        <option value="1E-9">Nanocoulomb - nC</option>
+                        <option value="1E-6">Microcoulomb - &mu;C</option>
+                        <option value="1E-3">Milicoulomb - mC</option>
+                        <option value="1E-2">Centicoulomb - cC</option>
+                        <option value="1E-1">Decicoulomb - dC</option>
+                        <option value="1">Coulomb - C</option>
+                        <option value="1E+1">Decacoulomb - daC</option>
+                        <option value="1E+2">Hektocoulomb - hC</option>
+                        <option value="1E+3">Kilocoulomb - kC</option>
+                        <option value="1E+6">Megacoulomb - MC</option>
+                        <option value="1E+9">Gigacoulomb - GC</option>
+                        <option value="1E+12">Teracolumb - tC</option>
+                        <option value="0.000001">Microampere-sekund - &mu;A.s</option>
+                        <option value="0.001">Miliampere-sekund - mA.s</option>
+                        <option value="1E+0">Ampere-sekund - A.s</option>
+                        <option value="1000">Kiloampere-sekund - kA.s</option>
+                        <option value="1000000">Megaampere-sekund - MA.s</option>
+                        <option value="3.335641E-10">Franklin - Fr</option>
+                        <option value="9.64853383E+4">Faraday - Fd</option>
+                        <option value="0.0000000003335641">Ladning esu - esu</option>
+                        <option value="10">Ladning emu - emu</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#elCharFrom','#elCharTo'),convert('inputElChar','outputElChar','#elCharFrom','#elCharTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputElChar" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="elCharTo" id="elCharTo" onchange="convert('inputElChar','outputElChar','#elCharFrom','#elCharTo')">
+                        <option value="1.602176462E-19">Atomarladning - e</option>
+                        <option value="10.0">Abcoulomb - abC</option>
+                        <option value="1E-12">Picocoulomb - pC</option>
+                        <option value="3.335641E-10">Statcoulomb - stC</option>
+                        <option value="1E-9">Nanocoulomb - nC</option>
+                        <option value="1E-6">Microcoulomb - &mu;C</option>
+                        <option value="1E-3">Milicoulomb - mC</option>
+                        <option value="1E-2">Centicoulomb - cC</option>
+                        <option value="1E-1">Decicoulomb - dC</option>
+                        <option value="1">Coulomb - C</option>
+                        <option value="1E+1">Decacoulomb - daC</option>
+                        <option value="1E+2">Hektocoulomb - hC</option>
+                        <option value="1E+3">Kilocoulomb - kC</option>
+                        <option value="1E+6">Megacoulomb - MC</option>
+                        <option value="1E+9">Gigacoulomb - GC</option>
+                        <option value="1E+12">Teracolumb - tC</option>
+                        <option value="0.000001">Microampere-sekund - &mu;A.s</option>
+                        <option value="0.001">Miliampere-sekund - mA.s</option>
+                        <option value="1E+0">Ampere-sekund - A.s</option>
+                        <option value="1000">Kiloampere-sekund - kA.s</option>
+                        <option value="1000000">Megaampere-sekund - MA.s</option>
+                        <option value="3.335641E-10">Franklin - Fr</option>
+                        <option value="9.64853383E+4">Faraday - Fd</option>
+                        <option value="0.0000000003335641">Ladning esu - esu</option>
+                        <option value="10">Ladning emu - emu</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convert('inputElChar',outputElChar','#elCharFrom','#elCharTo')" class="output">
+            </li>
+        </ul>
+
+        <! Energy Calculator >
+        <ul class="cal" id="energyCal" value="energyCal">
+            <h1 style="text-align: center; padding: 0 12%;">Energi</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputEnergy" class="text" onchange="convert('inputEnergy','outputEnergy','#energyFrom','#energyTo')">
+                </li>
+                <li class="li3">
+                    <select class="energyFrom" id="energyFrom" onchange="convert('inputEnergy','outputEnergy','#energyFrom','#energyTo')">
+                        <option value="1">Joule - J</option>
+                        <option value="1000">Kilojoule - kJ</option>
+                        <option value="3600">Watt-timer - Wh</option>
+                        <option value="3600000">Kilowatt-timer - kWh</option>
+                        <option value="4.1868">Kalorier - cal</option>
+                        <option value="4186.8">Kilokalorier - kcal</option>
+                        <option value="1.0">Newtonmeter - Nm</option>
+                        <option value="9.80665">Kilogram-meter - kg.m</option>
+                        <option value="1.355818">Foot-pound - fp</option>
+                        <option value="1E-7">Erg</option>
+                        <option value="1055.056">BTU</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#energyFrom','#energyTo'),convert('inputEnergy','outputEnergy','#energyFrom','#energyTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputEnergy" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="energyTo" id="energyTo" onchange="convert('inputEnergy','outputEnergy','#energyFrom','#energyTo')">
+                        <option value="1">Joule - j</option>
+                        <option value="1000">Kilojoule - kJ</option>
+                        <option value="3600">Watt-timer - wh</option>
+                        <option value="3600000">Kilowatt-timer - kwh</option>
+                        <option value="4.1868">Calorier - cal</option>
+                        <option value="4186.8">Kilocalorier - kcal</option>
+                        <option value="1.0">Newtonmeter - nm</option>
+                        <option value="9.80665">Kilogram-meter - kg-m</option>
+                        <option value="1.355818">Foot-pound - fp</option>
+                        <option value="1E-7">Erg</option>
+                        <option value="1055.056">BTU</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convert('inputEnergy','outputEnergy','#energyFrom','#energyTo')" class="output">
+            </li>
+        </ul>
+
+        <! Frequenzy Calculator >
+        <ul class="cal" id="freqCal" value="freqCal">
+            <h1 style="text-align: center; padding: 0 12%;">Frekvens</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputFreq" class="text" onchange="convert('inputFreq','outputFreq','#freqFrom','#freqTo')">
+                </li>
+                <li class="li3">
+                    <select class="freqFrom" id="freqFrom" onchange="convert('inputFreq','outputFreq','#freqFrom','#freqTo')">
+                        <option value="1">Herz - Hz</option>
+                        <option value="1E+3">Kiloherz - kHz</option>
+                        <option value="1E+6">Megaherz - MHz</option>
+                        <option value="1E+9">Gigaherz - GHz</option>
+                        <option value="1E+12">Teraherz - THz</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#freqFrom','#freqTo'),convert('inputFreq','outputFreq','#freqFrom','#freqTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputFreq" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="freqTo" id="freqTo" onchange="convert('inputFreq','outputFreq','#freqFrom','#freqTo')">
+                        <option value="1">Herz - Hz</option>
+                        <option value="1E+3">Kiloherz - kHz</option>
+                        <option value="1E+6">Megaherz - MHz</option>
+                        <option value="1E+9">Gigaherz - GHz</option>
+                        <option value="1E+12">Teraherz - THz</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convert('inputFreq','outputFreq','#freqFrom','#freqTo')" class="output">
+            </li>
+        </ul>
+
+        <! Glucose Calculator >
+        <ul class="cal" id="glucoseCal" value="glucoseCal">
+            <h1 style="text-align: center; padding: 0 12%;">Glucose</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputGlucose" class="text" onchange="convert('inputGlucose','outputGlucose','#glucoseFrom','#glucoseTo')">
+                </li>
+                <li class="li3">
+                    <select class="glucoseFrom" id="glucoseFrom" onchange="convert('inputGlucose','outputGlucose','#glucoseFrom','#glucoseTo')">
+                        <option value="1">Milimol pr. liter - mmol/l</option>
+                        <option value="0.0555">Miligram pr. deciliter - mg/dl</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#glucoseFrom','#glucoseTo'),convert('inputGlucose','outputGlucose','#glucoseFrom','#glucoseTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputGlucose" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="glucoseTo" id="glucoseTo" onchange="convert('inputGlucose','outputGlucose','#glucoseFrom','#glucoseTo')">
+                        <option value="1">Milimol pr. liter - mmol/l</option>
+                        <option value="0.0555">Miligram pr. deciliter - mg/dl</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convert('inputGlucose','outputGlucose','#glucoseFrom','#glucoseTo')" class="output">
+            </li>
+        </ul>
+
+        <! Speed Calculator >
+        <ul class="cal" id="speedCal" value="speedCal">
+            <h1 style="text-align: center; padding: 0 12%;">Hastighed</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputSpeed" class="text" onchange="convert('inputSpeed','outputSpeed','#speedFrom','#speedTo')">
+                </li>
+                <li class="li3">
+                    <select class="speedFrom" id="speedFrom" onchange="convert('inputSpeed','outputSpeed','#speedFrom','#speedTo')">
+                        <option value="0.00016666667">Centimeter pr. minut - cm/min</option>
+                        <option value="0.01">Centimeter pr. sekund - cm/s</option>
+                        <option value="1">Meter pr. sekund - m/s</option>
+                        <option value="0.016666667">Meter pr. minut - m/min</option>
+                        <option value="16.666666667">Kilometer pr. minut - km/min</option>
+                        <option value="0.277777778">Kilometer pr. time - km/h</option>
+                        <option value="0.3048">Foot pr. sekund - ft/s</option>
+                        <option value="0.00508">Foot pr. minut - ft/min</option>
+                        <option value="26.8224">Mil pr. minut - mi/min</option>
+                        <option value="0.44704">Mil pr. time - mi/h</option>
+                        <option value="0.514444">Knob - kn</option>
+                        <option value="340.29">Mach</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#speedFrom','#speedTo'),convert('inputSpeed','outputSpeed','#speedFrom','#speedTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputSpeed" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="speedTo" id="speedTo" onchange="convert('inputSpeed','outputSpeed','#speedFrom','#speedTo')">
+                        <option value="0.00016666667">Centimeter pr. minut - cm/min</option>
+                        <option value="0.01">Centimeter pr. sekund - cm/s</option>
+                        <option value="1">Meter pr. sekund - m/s</option>
+                        <option value="0.016666667">Meter pr. minut - m/min</option>
+                        <option value="16.666666667">Kilometer pr. minut - km/min</option>
+                        <option value="0.277777778">Kilometer pr. time - km/h</option>
+                        <option value="0.3048">Foot pr. sekund - ft/s</option>
+                        <option value="0.00508">Foot pr. minut - ft/min</option>
+                        <option value="26.8224">Mil pr. minut - mi/min</option>
+                        <option value="0.44704">Mil pr. time - mi/h</option>
+                        <option value="0.514444">Knob - kn</option>
+                        <option value="340.29">Mach</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convert('inputSpeed','outputSpeed','#speedFrom','#speedTo')" class="output">
+            </li>
+        </ul>
+
+        <! Calorie Calculator >
+        <ul class="cal" id="calorieCal" value="calorieCal">
+            <h1 style="text-align: center; padding: 0 12%;">Kalorie</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputCalorie" class="text" onchange="convert('inputCalorie','outputCalorie','#calorieFrom','#calorieTo')">
+                </li>
+                <li class="li3">
+                    <select class="calorieFrom" id="calorieFrom" onchange="convert('inputCalorie','outputCalorie','#calorieFrom','#calorieTo')">
+                        <option value="1">Kalorie pr. Kubikcentimeter - kal/cm&sup3;</option>
+                        <option value="0.001">Kilokalorie pr. Kubikmeter - kal/cm&sup3;</option>
+                        <option value="0.000000238846">Joule pr. Kubikmeter - J/m&sup3;</option>
+                        <option value="0.000238846">Kilojoule pr. Kubikmeter - kJ/m&sup3;</option>
+                        <option value="0.238846">Megajoule pr. Kubikmeter - MJ/M&sup3;</option>
+                        <option value="0.000000238846">Newton pr. Kvadratmeter - N/m&sup2;</option>
+                        <option value="2.38846E-8">Dyne pr. Kvadratcentimeter - dyne/cm&sup2;</option>
+                        <option value="0.00889915">Btu pr. Kubikfod - btu/ft&sup3;</option>
+                        <option value="0.01601846">Chu pr. Kubikfod - chu/ft&sup3;</option>
+                        <option value="889.915">Therm pr. Kubikfod - thm/ft&sup3;</option>
+                        <option value="5543.13">Therm pr. Gallon(UK) - thm/gal(UK)</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#calorieFrom','#calorieTo'),convert('inputCalorie','outputCalorie','#calorieFrom','#calorieTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputCalorie" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="calorieTo" id="calorieTo" onchange="convert('inputCalorie','outputCalorie','#calorieFrom','#calorieTo')">
+                        <option value="1">Kalorie pr. Kubikcentimeter - cal/cm&sup3;</option>
+                        <option value="0.001">Kilokalorie pr. Kubikmeter - cal/cm&sup3;</option>
+                        <option value="0.000000238846">Joule pr. Kubikmeter - J/m&sup3;</option>
+                        <option value="0.000238846">Kilojoule pr. Kubikmeter - kJ/m&sup3;</option>
+                        <option value="0.238846">Megajoule pr. Kubikmeter - MJ/M&sup3;</option>
+                        <option value="0.000000238846">Newton pr. Kvadratmeter - N/m&sup2;</option>
+                        <option value="2.38846E-8">Dyne pr. Kvadratcentimeter - dyne/cm&sup2;</option>
+                        <option value="0.00889915">Btu pr. Kubikfod - btu/ft&sup3;</option>
+                        <option value="0.01601846">Chu pr. Kubikfod - chu/ft&sup3;</option>
+                        <option value="889.915">Therm pr. Kubikfod - thm/ft&sup3;</option>
+                        <option value="5543.13">Therm pr. Gallon(UK) - thm/gal(UK)</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convert('inputCalorie','outputCalorie','#calorieFrom','#calorieTo')" class="output">
+            </li>
+        </ul>
+
+        <! Kinematic Viscosity Calculator >
+        <ul class="cal" id="kinVisCal" value="kinVisCal">
+            <h1 style="text-align: center; padding: 0 12%;">Kinematisk Viskositet</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputKinVis" class="text" onchange="convert('inputKinVis','outputKinVis','#kinVisFrom','#kinVisTo')">
+                </li>
+                <li class="li3">
+                    <select class="kinVisFrom" id="kinVisFrom" onchange="convert('inputKinVis','outputKinVis','#kinVisFrom','#kinVisTo')">
+                        <option value="0.092937">Kvadratfod pr. sekund - ft&sup2;/s</option>
+                        <option value="1">Kvadratmeter pr. Sekund - m&sup2;/s</option>
+                        <option value="0.0001">Strokes - St</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#kinVisFrom','#kinVisTo'),convert('inputKinVis','outputKinVis','#kinVisFrom','#kinVisTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputKinVis" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="kinVisTo" id="kinVisTo" onchange="convert('inputKinVis','outputKinVis','#kinVisFrom','#kinVisTo')">
+                        <option value="0.092937">Kvadratfod pr. sekund - ft&sup2;/s</option>
+                        <option value="1">Kvadratmeter pr. Sekund - m&sup2;/s</option>
+                        <option value="0.0001">Strokes - St</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convert('inputKinVis','outputKinVis','#kinVisFrom','#kinVisTo')" class="output">
+            </li>
+        </ul>
+
+        <! Force Calculator >
+        <ul class="cal" id="forceCal" value="forceCal">
+            <h1 style="text-align: center; padding: 0 12%;">Kraft</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputForce" class="text" onchange="convert('inputForce','outputForce','#forceFrom','#forceTo')">
+                </li>
+                <li class="li3">
+                    <select class="forceFrom" id="forceFrom" onchange="convert('inputForce','outputForce','#forceFrom','#forceTo')">
+                        <option value="1">Newton - N</option>
+                        <option value="1000">Kilonewton - kN</option>
+                        <option value="9.80665">Kilopond - kp</option>
+                        <option value="4.44822">Pound-force - IbF</option>
+                        <option value="0.138255">Poundal - pdl</option>
+                        <option value="0.00001">Dyne - dyn</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#forceFrom','#forceTo'),convert('inputForce','outputForce','#forceFrom','#forceTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputForce" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="forceTo" id="forceTo" onchange="convert('inputForce','outputForce','#forceFrom','#forceTo')">
+                        <option value="1">Newton - N</option>
+                        <option value="1000">Kilonewton - kN</option>
+                        <option value="9.80665">Kilopond - kp</option>
+                        <option value="4.44822">Pound-force - IbF</option>
+                        <option value="0.138255">Poundal - pdl</option>
+                        <option value="0.00001">Dyne - dyn</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convert('inputForce','outputForce','#forceFrom','#forceTo')" class="output">
+            </li>
+        </ul>
+
+        <! Radioactivity Calculator >
+        <ul class="cal" id="radCal" value="radCal">
+            <h1 style="text-align: center; padding: 0 12%;">Radioaktivitet</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputRad" class="text" onchange="convert('inputRad','outputRad','#radFrom','#radTo')">
+                </li>
+                <li class="li3">
+                    <select class="radFrom" id="radFrom" onchange="convert('inputRad','outputRad','#radFrom','#radTo')">
+                        <option value="0.001">Milibecquerel - mBq</option>
+                        <option value="1">Becquerel - Bq</option>
+                        <option value="1000">Kilobecuerel - kBq</option>
+                        <option value="1000000">Megabecuerel - MBq</option>
+                        <option value="1E+9">Gigabecquerel - GBq</option>
+                        <option value="1E+12">Terabecuerel - TBq</option>
+                        <option value="0.037">Piccocurie - pCi</option>
+                        <option value="37">Nanocurie - nCi</option>
+                        <option value="37000">Mikrocurie - &mu;Ci</option>
+                        <option value="3.7E+7">Milicurie - mCi</option>
+                        <option value="3.7E+10">Curie - Ci</option>
+                        <option value="3.7E+13">Kilocurie - kCi</option>
+                        <option value="0.016666666667">Henfald pr. minut - dis/min</option>
+                        <option value="1.0">Henfald pr. sekund - dis/s</option>
+                        <option value="1E+6">Rutherford - Rd</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#radFrom','#radTo'),convert('inputRad','outputRad','#radFrom','#radTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputRad" class="text" readonly>
+                </li>
+                <li class="li4">
+                    <select class="radTo" id="radTo" onchange="convert('inputRad','outputRad','#radFrom','#radTo')">
+                        <option value="0.001">Milibecquerel - mBq</option>
+                        <option value="1">Becquerel - Bq</option>
+                        <option value="1000">Kilobecuerel - kBq</option>
+                        <option value="1000000">Megabecuerel - MBq</option>
+                        <option value="1E+9">Gigabecquerel - GBq</option>
+                        <option value="1E+12">Terabecuerel - TBq</option>
+                        <option value="0.037">Piccocurie - pCi</option>
+                        <option value="37">Nanocurie - nCi</option>
+                        <option value="37000">Mikrocurie - &mu;Ci</option>
+                        <option value="3.7E+7">Milicurie - mCi</option>
+                        <option value="3.7E+10">Curie - Ci</option>
+                        <option value="3.7E+13">Kilocurie - kCi</option>
+                        <option value="0.016666666667">Henfald pr. minut - dis/min</option>
+                        <option value="1.0">Henfald pr. sekund - dis/s</option>
+                        <option value="1E+6">Rutherford - Rd</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onclick="convert('inputRad','outputRad','#radFrom','#radTo')" class="output">
+            </li>
+        </ul>
+
+        <! Length Calculator >
+        <ul class="cal" id="lengthCal" value="lengthCal">
+            <h1 style="text-align: center; padding: 0 12%;">Længdeomregning</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputLength" class="text" onchange="convert('inputLength','outputLength','#lengthFrom','#lengthTo')">
+                </li>
+                <li class="li3">
+                    <select class="lengthFrom" id="lengthFrom" onchange="convert('inputLength','outputLength','#lengthFrom','#lengthTo')">
+                        <option disabled>--SI-enheder--</option>
+                        <option value="1E-24">ym - yoctometer</option>
+                        <option value="1E-21">zm - zeptometer</option>
+                        <option value="1E-18">am - attometer</option>
+                        <option value="1E-15">fm - femtometer</option>
+                        <option value="1E-12">pm - pikometer</option>
+                        <option value="1E-9">nm - nanometer</option>
+                        <option value="1E-6">&mu;m - mikrometer</option>
+                        <option value="1E-3">mm - milimeter</option>
+                        <option value="1E-2">cm - centimeter</option>
+                        <option value="1E-1">dm - decimeter</option>
+                        <option value="1">m - meter</option>
+                        <option value="1000">km - kilometer</option>
+                        <option disabled>--imperial standard--</option>
+                        <option value="0.000254">th - thou</option>
+                        <option value="0.0254">in - inch</option>
+                        <option value="0.3048">ft - fod</option>
+                        <option value="0.9144">yd - yard</option>
+                        <option value="20.1168">ch - chain</option>
+                        <option value="201.168">fur - furlong</option>
+                        <option value="1609.344">mi - mile</option>
+                        <option value="4828.032">lea - league</option>
+                        <option disabled>- maritime enheder -</option>
+                        <option value="1.853184">ftm - fathom</option>
+                        <option value="185.3184">cable</option>
+                        <option value="1853.184">nautical mile</option>
+                        <option disabled>- Gunter's enheder -</option>
+                        <option value="0.201168">link</option>
+                        <option value="5.0292">rod</option>
+                        <option disabled>--danske enheder--</option>
+                        <option value="0.00018">Skurpel</option>
+                        <option value="0.00218">Linje</option>
+                        <option value="0.0049">Bygkorn</option>
+                        <option value="0.0261">Tomme</option>
+                        <option value="0.1569">Kvarter</option>
+                        <option value="0.3139">Fod</option>
+                        <option value="0.6277">Alen</option>
+                        <option value="1.884">Favn</option>
+                        <option value="3.13">Rode</option>
+                        <option value="185.11">Kabellængde</option>
+                        <option value="1851.11">Dansk sømil</option>
+                        <option value="1883">Fjerdingvej</option>
+                        <option value="1883.0">Fjerdingmil</option>
+                        <option value="1883.00">Kvartmil</option>
+                        <option value="7532.48">Dansk mil</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#lengthFrom','#lengthTo'),convert('inputLength','outputLength','#lengthFrom','#lengthTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputLength" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="lengthTo" id="lengthTo" onchange="convert('inputLength','outputLength','#lengthFrom','#lengthTo')">
+                        <option disabled>--SI-enheder--</option>
+                        <option value="1E-24">ym - yoctometer</option>
+                        <option value="1E-21">zm - zeptometer</option>
+                        <option value="1E-18">am - attometer</option>
+                        <option value="1E-15">fm - femtometer</option>
+                        <option value="1E-12">pm - pikometer</option>
+                        <option value="1E-9">nm - nanometer</option>
+                        <option value="1E-6">&mu;m - mikrometer</option>
+                        <option value="1E-3">mm - milimeter</option>
+                        <option value="1E-2">cm - centimeter</option>
+                        <option value="1E-1">dm - decimeter</option>
+                        <option value="1">m - meter</option>
+                        <option value="1000">km - kilometer</option>
+                        <option disabled>--imperial standard--</option>
+                        <option value="0.000254">th - thou</option>
+                        <option value="0.0254">in - inch</option>
+                        <option value="0.3048">ft - fod</option>
+                        <option value="0.9144">yd - yard</option>
+                        <option value="20.1168">ch - chain</option>
+                        <option value="201.168">fur - furlong</option>
+                        <option value="1609.344">mi - mile</option>
+                        <option value="4828.032">lea - league</option>
+                        <option disabled>- maritime enheder -</option>
+                        <option value="1.853184">ftm - fathom</option>
+                        <option value="185.3184">cable</option>
+                        <option value="1853.184">nautical mile</option>
+                        <option disabled>- Gunter's enheder -</option>
+                        <option value="0.201168">link</option>
+                        <option value="5.0292">rod</option>
+                        <option disabled>--danske enheder--</option>
+                        <option value="0.00018">Skurpel</option>
+                        <option value="0.00218">Linje</option>
+                        <option value="0.0049">Bygkorn</option>
+                        <option value="0.0261">Tomme</option>
+                        <option value="0.1569">Kvarter</option>
+                        <option value="0.3139">Fod</option>
+                        <option value="0.6277">Alen</option>
+                        <option value="1.884">Favn</option>
+                        <option value="3.13">Rode</option>
+                        <option value="185.11">Kabellængde</option>
+                        <option value="1851.11">Dansk sømil</option>
+                        <option value="1883">Fjerdingvej</option>
+                        <option value="1883.0">Fjerdingmil</option>
+                        <option value="1883.00">Kvartmil</option>
+                        <option value="7532.48">Dansk mil</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convert('inputLength','outputLength','#lengthFrom','#lengthTo')" class="output">
+            </li>
+        </ul>
+
+        <! Mass Calculator >
+        <ul class="cal" id="massCal" value="massCal">
+            <h1 style="text-align: center; padding: 0 12%;">Masse</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputMass" class="text" onchange="convert('inputMass','outputMass','#massFrom','#massTo')">
+                </li>
+                <li class="li3">
+                    <select class="massFrom" id="massFrom" onchange="convert('inputMass','outputMass','#massFrom','#massTo')">
+                        <option disabled>--Si - Enheder--</option>
+                        <option value="1E-6">Miligram - mg</option>
+                        <option value="1E-3">Gram - g</option>
+                        <option value="1">Kilogram - kg</option>
+                        <option value="1000">Ton - t</option>
+                        <option disabled>-- Imperial Standard--</option>
+                        <option value="0.00006479891">Grain - gr</option>
+                        <option value="0.0017718451953125">Drachm - dr</option>
+                        <option value="0.028349523125">Ounce - oz</option>
+                        <option value="0.0311035">Troy ounce - oz.tr.</option>
+                        <option value="0.45359237">Pound - Ib</option>
+                        <option value="6.35029318">Stone - st</option>
+                        <option value="12.70058636">Quarter - qr</option>
+                        <option value="50.80234544">Hundredweight - cwt</option>
+                        <option value="1016.0469088">Ton long(UK) - ton</option>
+                        <option value="907.185">Ton short(US) - ton</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#massFrom','#massTo'),convert('inputMass','outputMass','#massFrom','#massTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputMass" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="massTo" id="massTo" onchange="convert('inputMass','outputMass','#massFrom','#massTo')">
+                        <option disabled>--Si - Enheder--</option>
+                        <option value="1E-6">Miligram - mg</option>
+                        <option value="1E-3">Gram - g</option>
+                        <option value="1">Kilogram - kg</option>
+                        <option value="1E+3">Ton - t</option>
+                        <option disabled>-- Imperial Standard--</option>
+                        <option value="0.00006479891">Grain - gr</option>
+                        <option value="0.0017718451953125">Drachm - dr</option>
+                        <option value="0.028349523125">Ounce - oz</option>
+                        <option value="0.0311035">Troy ounce - oz.tr.</option>
+                        <option value="0.45359237">Pound - Ib</option>
+                        <option value="6.35029318">Stone - st</option>
+                        <option value="12.70058636">Quarter - qr</option>
+                        <option value="50.80234544">Hundredweight - cwt</option>
+                        <option value="1016.0469088">Ton long(UK) - ton</option>
+                        <option value="907.185">Ton short(US) - ton</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convert('inputMass','outputMass','#massFrom','#massTo')" class="output">
+            </li>
+        </ul>
+
+        <! Torque Calculator >
+        <ul class="cal" id="torqueCal" value="torqueCal">
+            <h1 style="text-align: center; padding: 0 12%;">Moment</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputTorque" class="text" onchange="convert('inputTorque','outputTorque','#torqueFrom','#torqueTo')">
+                </li>
+                <li class="li3">
+                    <select class="torqueFrom" id="torqueFrom" onchange="convert('inputTorque','outputTorque','#torqueFrom','#torqueTo')">
+                        <option disabled>-- SI-Enheder --</option>
+                        <option value="0.001">Newton Milimeter - Nmm</option>
+                        <option value="0.01">Newton Centimeter - Ncm</option>
+                        <option value="1">Newton Meter - Nm</option>
+                        <option value="1000">Kilonewton Meter - KNm</option>
+                        <option value="0.009806650">Kilogram-Kraft Milimeter - kgf·cm</option>
+                        <option value="0.0000980665">Gram-Kraft Centimeter - gf·cm</option>
+                        <option value="0.0980665">Kilogram-Kraft Centimeter - kgf·cm</option>
+                        <option value="0.00980665">Gram-Kraft Meter - gf·m</option>
+                        <option value="9.80665">Kilogram-Kraft Meter - kgf·m</option>
+                        <option value="9806.65">Ton-Kraft (Metr.) Meter - tf·m</option>
+                        <option value="1E-8">Dyne Milimeter - dyne·mm</option>
+                        <option value="1E-7">Dyne Centimeter - dyne·cm</option>
+                        <option value="0.00001">Dyne Meter - dyne·m</option>
+                        <option disabled>-- Imperial --</option>
+                        <option value="0.007061552">Ounce-Kraft Inch - ozf·in</option>
+                        <option value="0.084738624">Ounce-Kraft Foot - ozf·ft</option>
+                        <option value="0.112984833333333333333">Pound-Kraft Inch - lbf·in</option>
+                        <option value="1.355818">Pund-Kraft Foot - lbf·ft</option>
+                        <option value="0.00351167">Poundal Inch - pdl·in</option>
+                        <option value="0.0421401">Poundal foot - pdl·ft</option>
+                        <option value="8896.44">Ton-Kraft (short) Meter - tfm</option>
+                        <option value="9964.02">Ton-Kraft (long) Meter - tfm</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#torqueFrom','#torqueTo'),convert('inputTorque','outputTorque','#torqueFrom','#torqueTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputTorque" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="torqueTo" id="torqueTo" onchange="convert('inputTorque','outputTorque','#torqueFrom','#torqueTo')">
+                        <option disabled>-- SI-Enheder --</option>
+                        <option value="0.001">Newton Milimeter - Nmm</option>
+                        <option value="0.01">Newton Centimeter - Ncm</option>
+                        <option value="1">Newton Meter - Nm</option>
+                        <option value="1000">Kilonewton Meter - KNm</option>
+                        <option value="0.009806650">Kilogram-Kraft Milimeter - kgf·cm</option>
+                        <option value="0.0000980665">Gram-Kraft Centimeter - gf·cm</option>
+                        <option value="0.0980665">Kilogram-Kraft Centimeter - kgf·cm</option>
+                        <option value="0.00980665">Gram-Kraft Meter - gf·m</option>
+                        <option value="9.80665">Kilogram-Kraft Meter - kgf·m</option>
+                        <option value="9806.65">Ton-Kraft (Metr.) Meter - tf·m</option>
+                        <option value="1E-8">Dyne Milimeter - dyne·mm</option>
+                        <option value="1E-7">Dyne Centimeter - dyne·cm</option>
+                        <option value="0.00001">Dyne Meter - dyne·m</option>
+                        <option disabled>-- Imperial --</option>
+                        <option value="0.007061552">Ounce-Kraft Inch - ozf·in</option>
+                        <option value="0.084738624">Ounce-Kraft Foot - ozf·ft</option>
+                        <option value="0.112984833333333333333">Pound-Kraft Inch - lbf·in</option>
+                        <option value="1.355818">Pund-Kraft Foot - lbf·ft</option>
+                        <option value="0.00351167">Poundal Inch - pdl·in</option>
+                        <option value="0.0421401">Poundal foot - pdl·ft</option>
+                        <option value="8896.44">Ton-Kraft (short) Meter - tfm</option>
+                        <option value="9964.02">Ton-Kraft (long) Meter - tfm</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convert('inputTorque','outputTorque','#torqueFrom','#torqueTo')" class="output">
+            </li>
+        </ul>
+
+        <! Moment of Inertia Calculator >
+        <ul class="cal" id="inertiaCal" value="inertiaCal">
+            <h1 style="text-align: center; padding: 0 12%;">Inertimoment</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputInertia" class="text" onchange="convert('inputInertia','outputInertia','#inertiaFrom','#inertiaTo')">
+                </li>
+                <li class="li3">
+                    <select class="inertiaFrom" id="inertiaFrom" onchange="convert('inputInertia','outputInertia','#inertiaFrom','#inertiaTo')">
+                        <option disabled>-- SI-Enheder --</option>
+                        <option value="0.001">Gram &times; Kvadratmilimeter - g·mm&sup2;</option>
+                        <option value="1">Kilogram &times; Kvadratmilimeter - kg·mm&sup2;</option>
+                        <option value="1000000">Kilogram &times; Kvadratmeter - kg·m&sup2;</option>
+                        <option value="9806650">Kilogram-Kraft &times; Meter &times; Sekund&sup2; - kgf·m·s&sup2;</option>
+                        <option disabled>-- Imperial --</option>
+                        <option value="18.29">Ounze &times; Kvadratinch - oz·in&sup2;</option>
+                        <option value="292.64">Pund &times; Kvadratinch - lb·in&sup2;</option>
+                        <option value="42140.1">Pund &times; Kvadratfoot - lb·ft&sup2;</option>
+                        <option value="18.29">Ounze-Kraft &times; Inch &times; Sekund&sup2; - ozf·in·s&sup2;</option>
+                        <option value="112984.8">Pund-Kraft &times; Inch &times; Sekund&sup2; - lb·in·s&sup2;</option>
+                        <option value="1355818">Pund-Kraft &times; Foot &times; Sekund&sup2; - lbf·ft·s&sup2;</option>
+                        <option value="1355818.0">Slug &times; Kvadratfoot - slug·ft&sup2;</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#inertiaFrom','#inertiaTo'),convert('inputInertia','outputInertia','#inertiaFrom','#inertiaTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputInertia" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="inertiaTo" id="inertiaTo" onchange="convert('inputInertia','outputInertia','#inertiaFrom','#inertiaTo')">
+                        <option disabled>-- SI-Enheder --</option>
+                        <option value="0.001">Gram &times; Kvadratmilimeter - g·mm&sup2;</option>
+                        <option value="1">Kilogram &times; Kvadratmilimeter - kg·mm&sup2;</option>
+                        <option value="1000000">Kilogram &times; Kvadratmeter - kg·m&sup2;</option>
+                        <option value="9806650">Kilogram-Kraft &times; Meter &times; Sekund&sup2; - kgf·m·s&sup2;</option>
+                        <option disabled>-- Imperial --</option>
+                        <option value="18.29">Ounze &times; Kvadratinch - oz·in&sup2;</option>
+                        <option value="292.64">Pund &times; Kvadratinch - lb·in&sup2;</option>
+                        <option value="42140.1">Pund &times; Kvadratfoot - lb·ft&sup2;</option>
+                        <option value="18.29">Ounze-Kraft &times; Inch &times; Sekund&sup2; - ozf·in·s&sup2;</option>
+                        <option value="112984.8">Pund-Kraft &times; Inch &times; Sekund&sup2; - lb·in·s&sup2;</option>
+                        <option value="1355818">Pund-Kraft &times; Foot &times; Sekund&sup2; - lbf·ft·s&sup2;</option>
+                        <option value="1355818.0">Slug &times; Kvadratfoot - slug·ft&sup2;</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convert('inputInertia','outputInertia','#inertiaFrom','#inertiaTo')" class="output">
+            </li>
+        </ul>
+
+        <! Prefixes Calculator >
+        <ul class="cal" id="prefixCal" value="prefixCal">
+            <h1 style="text-align: center; padding: 0 12%;">Præfikser</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputPrefix" class="text" onchange="convert('inputPrefix','outputPrefix','#prefixFrom','#prefixTo')">
+                </li>
+                <li class="li3">
+                    <select class="prefixFrom" id="prefixFrom" onchange="convert('inputPrefix','outputPrefix','#prefixFrom','#prefixTo')">
+                        <option value="1E-24">y - Yocto</option>
+                        <option value="1E-21">z - Zepto</option>
+                        <option value="1E-18">a - Atto</option>
+                        <option value="1E-15">f - Femto</option>
+                        <option value="1E-12">p - Pico</option>
+                        <option value="1E-9">n - Nano</option>
+                        <option value="1E-6">&mu; - Mikro</option>
+                        <option value="0.001">m - mili</option>
+                        <option value="0.01">c - Centi</option>
+                        <option value="0.1">d - Deci</option>
+                        <option value="1">-ingen-</option>
+                        <option value="10">da - Deca</option>
+                        <option value="100">h - Hekto</option>
+                        <option value="1000">k - Kilo</option>
+                        <option value="1000000">M - Mega</option>
+                        <option value="1E+9">G - Giga</option>
+                        <option value="1E+12">T - Tera</option>
+                        <option value="1E+15">P - Peta</option>
+                        <option value="1E+18">exa - Exa</option>
+                        <option value="1E+24">Z - Zetta</option>
+                        <option value="1E+24">Y - Yotta</option>
+                        <option disabled></option>
+                        <option value="1024">Ki - Kibi</option>
+                        <option value="1048576">Mi - Mebi</option>
+                        <option value="1.07374E+9">Gi - Gibi</option>
+                        <option value="1.09951">Ti - Tebi</option>
+                        <option value="1.1259E+15">Pi - Pebi</option>
+                        <option value="1.15292E+18">exbi - Exbi</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#prefixFrom','#prefixTo'),convert('inputPrefix','outputPrefix','#prefixFrom','#prefixTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputPrefix" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="prefixTo" id="prefixTo" onchange="convert('inputPrefix','outputPrefix','#prefixFrom','#prefixTo')">
+                        <option value="1E-24">y - Yocto</option>
+                        <option value="1E-21">z - Zepto</option>
+                        <option value="1E-18">a - Atto</option>
+                        <option value="1E-15">f - Femto</option>
+                        <option value="1E-12">p - Pico</option>
+                        <option value="1E-9">n - Nano</option>
+                        <option value="1E-6">&mu; - Mikro</option>
+                        <option value="0.001">m - mili</option>
+                        <option value="0.01">c - Centi</option>
+                        <option value="0.1">d - Deci</option>
+                        <option value="1">-ingen-</option>
+                        <option value="10">da - Deca</option>
+                        <option value="100">h - Hekto</option>
+                        <option value="1000">k - Kilo</option>
+                        <option value="1000000">M - Mega</option>
+                        <option value="1E+9">G - Giga</option>
+                        <option value="1E+12">T - Tera</option>
+                        <option value="1E+15">P - Peta</option>
+                        <option value="1E+18">exa - Exa</option>
+                        <option value="1E+24">Z - Zetta</option>
+                        <option value="1E+24">Y - Yotta</option>
+                        <option disabled></option>
+                        <option value="1024">Ki - Kibi</option>
+                        <option value="1048576">Mi - Mebi</option>
+                        <option value="1.07374E+9">Gi - Gibi</option>
+                        <option value="1.09951">Ti - Tebi</option>
+                        <option value="1.1259E+15">Pi - Pebi</option>
+                        <option value="1.15292E+18">exbi - Exbi</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convert('inputPrefix','outputPrefix','#prefixFrom','#prefixTo')" class="output">
+            </li>
+        </ul>
+
+        <! Radioactivity Absorbed Calculator >
+        <ul class="cal" id="radAbsCal" value="radAbsCal">
+            <h1 style="text-align: center; padding: 0 12%;">Radioaktivitet Absorberet</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputRadAbs" class="text" onchange="convert('inputRadAbs','outputRadAbs','#radAbsFrom','#radAbsTo')">
+                </li>
+                <li class="li3">
+                    <select class="radAbsFrom" id="radAbsFrom" onchange="convert('inputRadAbs','outputRadAbs','#radAbsFrom','#radAbsTo')">
+                        <option value="1E-21">Attogray - aGy</option>
+                        <option value="1E-18">Femtogray - fGy</option>
+                        <option value="1E-15">Picogray - pGy</option>
+                        <option value="1E-12">Nanogray - nGy</option>
+                        <option value="1E-9">Mikrogray - &mu;Gy</option>
+                        <option value="0.000001">Miligray - mGy</option>
+                        <option value="0.00001">Centigray - cGy</option>
+                        <option value="0.0001">Decigray - dGy</option>
+                        <option value="0.0010">Gray - Gy</option>
+                        <option value="0.01">Dekagray - daGy</option>
+                        <option value="0.1">Hektogray - hGy</option>
+                        <option value="1.0">Kilogray - kGy</option>
+                        <option value="1000.0">Megagray - MGy</option>
+                        <option value="1000000">Gigagray - GGy</option>
+                        <option value="1E+9">Teragray - TGy</option>
+                        <option value="1E+12">Petagray - PGy</option>
+                        <option value="1E+15">Exagray - EGy</option>
+                        <option disabled></option>
+                        <option value="1000">Jule pr. Miligram - J/mg</option>
+                        <option value="100">Jule pr. Centigram - J/cg</option>
+                        <option value="1">Jule pr. Gram - J/g</option>
+                        <option value="0.001">Joule pr. Kilogram - J/kg</option>
+                        <option disabled></option>
+                        <option value="1.0E-9">Mikrosievert - &mu;Sv</option>
+                        <option value="0.0000010">Milisievert - mSv</option>
+                        <option value="0.0010">Sievert - Sv</option>
+                        <option disabled></option>
+                        <option value="1E-8">Milirad - mrd</option>
+                        <option value="0.000010">Rad - rd</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#radAbsFrom','#radAbsTo'),convert('inputRadAbs','outputRadAbs','#radAbsFrom','#radAbsTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputRadAbs" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="radAbsTo" id="radAbsTo" onchange="convert('inputRadAbs','outputRadAbs','#radAbsFrom','#radAbsTo')">
+                        <option value="1E-21">Attogray - aGy</option>
+                        <option value="1E-18">Femtogray - fGy</option>
+                        <option value="1E-15">Picogray - pGy</option>
+                        <option value="1E-12">Nanogray - nGy</option>
+                        <option value="1E-9">Mikrogray - &mu;Gy</option>
+                        <option value="0.000001">Miligray - mGy</option>
+                        <option value="0.00001">Centigray - cGy</option>
+                        <option value="0.0001">Decigray - dGy</option>
+                        <option value="0.0010">Gray - Gy</option>
+                        <option value="0.01">Dekagray - daGy</option>
+                        <option value="0.1">Hektogray - hGy</option>
+                        <option value="1.0">Kilogray - kGy</option>
+                        <option value="1000.0">Megagray - MGy</option>
+                        <option value="1000000">Gigagray - GGy</option>
+                        <option value="1E+9">Teragray - TGy</option>
+                        <option value="1E+12">Petagray - PGy</option>
+                        <option value="1E+15">Exagray - EGy</option>
+                        <option disabled></option>
+                        <option value="1000">Jule pr. Miligram - J/mg</option>
+                        <option value="100">Jule pr. Centigram - J/cg</option>
+                        <option value="1">Jule pr. Gram - J/g</option>
+                        <option value="0.001">Joule pr. Kilogram - J/kg</option>
+                        <option disabled></option>
+                        <option value="1.0E-9">Mikrosievert - &mu;Sv</option>
+                        <option value="0.0000010">Milisievert - mSv</option>
+                        <option value="0.0010">Sievert - Sv</option>
+                        <option disabled></option>
+                        <option value="1E-8">Milirad - mrd</option>
+                        <option value="0.000010">Rad - rd</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convert('inputRadAbs','outputRadAbs','#radAbsFrom','#radAbsTo')" class="output">
+            </li>
+        </ul>
+
+        <! Current Calculator >
+        <ul class="cal" id="currentCal" value="currentCal">
+            <h1 style="text-align: center; padding: 0 12%;">Masse</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputCurrent" class="text" onchange="convert('inputCurrent','outputCurrent','#currentFrom','#currentTo')">
+                </li>
+                <li class="li3">
+                    <select class="currentFrom" id="currentFrom" onchange="convert('inputCurrent','outputCurrent','#currentFrom','#currentTo')">
+                        <option value="0.000001">Mikroampere - &mu;A</option>
+                        <option value="0.001">Miliampere - mA</option>
+                        <option value="1">Ampere - A</option>
+                        <option value="1000">Kiloampere - kA</option>
+                        <option value="1000000">Megaampere - MA</option>
+                        <option value="10">Biot - Bi</option>
+                        <option value="3.3356E-9">Statampere - stA</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#currentFrom','#currentTo'),convert('inputCurrent','outputCurrent','#currentFrom','#currentTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputCurrent" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="currentTo" id="currentTo" onchange="convert('inputCurrent','outputCurrent','#currentFrom','#currentTo')">
+                        <option value="0.000001">Mikroampere - &mu;A</option>
+                        <option value="0.001">Miliampere - mA</option>
+                        <option value="1">Ampere - A</option>
+                        <option value="1000">Kiloampere - kA</option>
+                        <option value="1000000">Megaampere - MA</option>
+                        <option value="10">Biot - Bi</option>
+                        <option value="3.3356E-9">Statampere - stA</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convert('inputCurrent','outputCurrent','#currentFrom','#currentTo')" class="output">
+            </li>
+        </ul>
+
+        <! Volume Flow Rate Calculator >
+        <ul class="cal" id="volFlowCal" value="volFlowCal">
+            <h1 style="text-align: center; padding: 0 12%;">Strømningsmængde</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputVolFlow" class="text" onchange="convertVolFlow()">
+                </li>
+                <li class="li3">
+                    <select class="volFlowVolFrom" id="volFlowVolFrom" onchange="convertVolFlow()">
+                        <option disabled>-- SI-Enheder -- </option>
+                        <option value="1E-6">Kubikmilimeter - mm&sup3;</option>
+                        <option value="0.0010">Kubikcentimeter - cm&sup3;</option>
+                        <option value="1000.0">Kubikmeter - m&sup3;</option>
+                        <option value="0.001">Mililiter - ml</option>
+                        <option value="0.1">Deciliter - dl</option>
+                        <option value="1">Liter - l</option>
+                        <option value="100">Hektoliter - hl</option>
+                        <option value="1000">Kiloliter - kl</option>
+                        <option disabled>-- Imperial --</option>
+                        <option value="119.2405">Barrel - bbl</option>
+                        <option value="158.9873">Barrel (oil) - bbl(oil)</option>
+                        <option value="102790.15461">Acre Inch - ac.in</option>
+                        <option value="1233480">Acre Foot - ac.ft</option>
+                        <option value="0.02957353">Fluid Ounce(US) - oz(US)</option>
+                        <option value="0.02841306">Fluid Ounce (UK) - oz(UK)</option>
+                        <option value="3.78541">Gallon (US) - gal(US)</option>
+                        <option value="4.54609">Gallon (UK) - gal(UK)</option>
+                        <option value="0.01638706">Kubikinch - in&sup3;</option>
+                        <option value="28.31685">Kubikfoot - ft&sup3;</option>
+                        <option value="764.555">Kubikyard - yd&sup3;</option>
+                    </select>
+                    <a class="to">pr.</a>
+                    <select class="volFlowTimeFrom" id="volFlowTimeFrom" onchange="convertVolFlow()">
+                        <option value="24">Dag - d</option>
+                        <option value="1">Time - h</option>
+                        <option value="0.016666666666666666667">Minut - m</option>
+                        <option value="0.000277777777777777778">Sekund - s</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptionsVolFlow(),convertVolFlow()">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputVolFlow" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="volFlowVolTo" id="volFlowVolTo" onchange="convertVolFlow()">
+                        <option disabled>-- SI-Enheder -- </option>
+                        <option value="1E-6">Kubikmilimeter - mm&sup3;</option>
+                        <option value="0.0010">Kubikcentimeter - cm&sup3;</option>
+                        <option value="1000.0">Kubikmeter - m&sup3;</option>
+                        <option value="0.001">Mililiter - ml</option>
+                        <option value="0.1">Deciliter - dl</option>
+                        <option value="1">Liter - l</option>
+                        <option value="100">Hektoliter - hl</option>
+                        <option value="1000">Kiloliter - kl</option>
+                        <option disabled>-- Imperial --</option>
+                        <option value="119.2405">Barrel - bbl</option>
+                        <option value="158.9873">Barrel (oil) - bbl(oil)</option>
+                        <option value="102790.15461">Acre Inch - ac.in</option>
+                        <option value="1233480">Acre Foot - ac.ft</option>
+                        <option value="0.02957353">Fluid Ounce(US) - oz(US)</option>
+                        <option value="0.02841306">Fluid Ounce (UK) - oz(UK)</option>
+                        <option value="3.78541">Gallon (US) - gal(US)</option>
+                        <option value="4.54609">Gallon (UK) - gal(UK)</option>
+                        <option value="0.01638706">Kubikinch - in&sup3;</option>
+                        <option value="28.31685">Kubikfoot - ft&sup3;</option>
+                        <option value="764.555">Kubikyard - yd&sup3;</option>
+                    </select>
+                    <a class="to">pr.</a>
+                    <select class="volFlowTimeTo" id="volFlowTimeTo" onchange="convertVolFlow()">
+                        <option value="24">Dag - d</option>
+                        <option value="1">Time - h</option>
+                        <option value="0.016666666666666666667">Minut - m</option>
+                        <option value="0.000277777777777777778">Sekund - s</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convertVolFlow()" class="output">
+            </li>
+        </ul>
+
+        <! Strength Calculator >
+        <ul class="cal" id="strengthCal" value="strengthCal">
+            <h1 style="text-align: center; padding: 0 12%;">Styrke</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputStrength" class="text" onchange="convert('inputStrength','outputStrength','#strengthFrom','#strengthTo')">
+                </li>
+                <li class="li3">
+                    <select class="strengthFrom" id="strengthFrom" onchange="convert('inputStrength','outputStrength','#strengthFrom','#strengthTo')">
+                        <option value="1">Pascal - Pa</option>
+                        <option value="1000000">Megapascal - MPa</option>
+                        <option value="1000000.0">Newton pr. Kvadratmilimeter - N/mm&sup2;</option>
+                        <option value="6894800">Kilopund pr. Kvadratinch - ksi</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#strengthFrom','#strengthTo'),convert('inputStrength','outputStrength','#strengthFrom','#strengthTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputStrength" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="strengthTo" id="strengthTo" onchange="convert('inputStrength','outputStrength','#strengthFrom','#strengthTo')">
+                        <option value="1">Pascal - Pa</option>
+                        <option value="1000000">Megapascal - MPa</option>
+                        <option value="1000000.0">Newton pr. Kvadratmilimeter - N/mm&sup2;</option>
+                        <option value="6894800">Kilopund pr. Kvadratinch - ksi</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convert('inputStrength','outputStrength','#strengthFrom','#strengthTo')" class="output">
+            </li>
+        </ul>
+
+        <! Temperature Calculator >
+        <ul class="cal" id="temperatureCal" value="temperatureCal">
+            <h1 style="text-align: center; padding: 0 12%;">Temperatur</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputTemperature" class="text" onchange="convertTemperature()">
+                </li>
+                <li class="li3">
+                    <select class="temperatureFrom" id="temperatureFrom" onchange="convertTemperature()">
+                        <option value="1">Celcius - &deg;C</option>
+                        <option value="2">Kelvin - &deg;K</option>
+                        <option value="3">Fahrenheit - &deg;F</option>
+                        <option value="4">Rankine - &deg;R</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#temperatureFrom','#temperatureTo'),convertTemperature()">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputTemperature" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="temperatureTo" id="temperatureTo" onchange="convertTemperature()">
+                        <option value="1">Celcius - &deg;C</option>
+                        <option value="2">Kelvin - &deg;K</option>
+                        <option value="3">Fahrenheit - &deg;F</option>
+                        <option value="4">Rankine - &deg;R</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convertTemperature()" class="output">
+            </li>
+        </ul>
+
+        <! Time Calculator >
+        <ul class="cal" id="timeCal" value="timeCal">
+            <h1 style="text-align: center; padding: 0 12%;">Tid</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputTime" class="text" onchange="convert('inputTime','outputTime','#timeFrom','#timeTo')">
+                </li>
+                <li class="li3">
+                    <select class="timeFrom" id="timeFrom" onchange="convert('inputTime','outputTime','#timeFrom','#timeTo')">
+                        <option value="2.777777777777777777778E-13">Nanosekunder - ns</option>
+                        <option value="2.777777777777777777778E-10">Mikrosekunder - &mu;s</option>
+                        <option value="2.777777777777777777778E-7">Milisekunder - ms</option>
+                        <option value="2.777777777777777777778E-4">Sekunder - s</option>
+                        <option value="0.016666666666666666667">Minutter - m</option>
+                        <option value="1">Timer - h</option>
+                        <option value="24">Dage - d</option>
+                        <option value="168">Uger - wk</option>
+                        <option value="730">Måneder - mth</option>
+                        <option value="8760">År - yr</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#timeFrom','#timeTo'),convert('inputTime','outputTime','#timeFrom','#timeTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputTime" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="timeTo" id="timeTo" onchange="convert('inputTime','outputTime','#timeFrom','#timeTo')">
+                        <option value="2.777777777777777777778E-13">Nanosekunder - ns</option>
+                        <option value="2.777777777777777777778E-10">Mikrosekunder - &mu;s</option>
+                        <option value="2.777777777777777777778E-7">Milisekunder - ms</option>
+                        <option value="2.777777777777777777778E-4">Sekunder - s</option>
+                        <option value="0.016666666666666666667">Minutter - m</option>
+                        <option value="1">Timer - h</option>
+                        <option value="24">Dage - d</option>
+                        <option value="168">Uger - wk</option>
+                        <option value="730">Måneder - mth</option>
+                        <option value="8760">År - yr</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convert('inputTime','outputTime','#timeFrom','#timeTo')" class="output">
+            </li>
+        </ul>
+
+        <! Pressure Calculator >
+        <ul class="cal" id="pressureCal" value="pressureCal">
+            <h1 style="text-align: center; padding: 0 12%;">Tryk</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputPressure" class="text" onchange="convert('inputPressure','outputPressure','#pressureFrom','#pressureTo')">
+                </li>
+                <li class="li3">
+                    <select class="pressureFrom" id="pressureFrom" onchange="convert('inputPressure','outputPressure','#pressureFrom','#pressureTo')">
+                        <option value="0.98067">Teknisk atmosfære - atm</option>
+                        <option value="1.01325">Fysisk atmosfære - atm</option>
+                        <option value="0.00001">Pascal - Pa</option>
+                        <option value="0.0001">Decapascal - daPa</option>
+                        <option value="0.001">Hektopascal - HPa</option>
+                        <option value="0.01">Kilopascal - kPa</option>
+                        <option value="10">Megapascal - MPa</option>
+                        <option value="10000">Gigapascal - GPa</option>
+                        <option value="1">Bar</option>
+                        <option value="0.001333224">Torr</option>
+                        <option value="0.03386">Inches Kviksølv - inHg</option>
+                        <option value="0.068948">Pund pr. Kvadratinch - psi</option>
+                        <option value="68.948">Kilopund pr. Kvadratinch - ksi</option>
+                        <option value="0.000478803">Pund pr. kvadratfod - psf</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#pressureFrom','#pressureTo'),convert('inputPressure','outputPressure','#pressureFrom','#pressureTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputPressure" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="pressureTo" id="pressureTo" onchange="convert('inputPressure','outputPressure','#pressureFrom','#pressureTo')">
+                        <option value="0.98067">Teknisk atmosfære - atm</option>
+                        <option value="1.01325">Fysisk atmosfære - atm</option>
+                        <option value="0.00001">Pascal - Pa</option>
+                        <option value="0.0001">Decapascal - daPa</option>
+                        <option value="0.001">Hektopascal - HPa</option>
+                        <option value="0.01">Kilopascal - kPa</option>
+                        <option value="10">Megapascal - MPa</option>
+                        <option value="10000">Gigapascal - GPa</option>
+                        <option value="1">Bar</option>
+                        <option value="0.001333224">Torr</option>
+                        <option value="0.03386">Inches Kviksølv - inHg</option>
+                        <option value="0.068948">Pund pr. Kvadratinch - psi</option>
+                        <option value="68.948">Kilopund pr. Kvadratinch - ksi</option>
+                        <option value="0.000478803">Pund pr. kvadratfod - psf</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convert('inputPressure','outputPressure','#pressureFrom','#pressureTo')" class="output">
+            </li>
+        </ul>
+
+        <! Vacuum Calculator >
+        <ul class="cal" id="vacuumCal" value="vacuumCal">
+            <h1 style="text-align: center; padding: 0 12%;">Vakum</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputVacuum" class="text" onchange="convert('inputVacuum','outputVacuum','#vacuumFrom','#vacuumTo')">
+                </li>
+                <li class="li3">
+                    <select class="vacuumFrom" id="vacuumFrom" onchange="convert('inputVacuum','outputVacuum','#vacuumFrom','#vacuumTo')">
+                        <option value="0.00001">Pascal - Pa</option>
+                        <option value="1.013171">Atmosfære - atm</option>
+                        <option value="0.001">Milibar - mBar</option>
+                        <option value="1">Bar</option>
+                        <option value="0.000980661">Cintimeter Vand - cmH2O</option>
+                        <option value="0.001333227">Milimeter Kviksølv - mmHg</option>
+                        <option value="0.0013332270">Torr</option>
+                        <option value="0.002493766">Inches Vand - inH2O</option>
+                        <option value="0.0338639">Inches Kviksølv - inHg</option>
+                        <option value="0.980392">Kilogram pr. Kvadratcentimeter - kg/cm&sup2;</option>
+                        <option value="0.0689474">Pund pr. Kvadratinch - psi</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#vacuumFrom','#vacuumTo'),convert('inputVacuum','outputVacuum','#vacuumFrom','#vacuumTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputVacuum" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="vacuumTo" id="vacuumTo" onchange="convert('inputVacuum','outputVacuum','#vacuumFrom','#vacuumTo')">
+                        <option value="0.00001">Pascal - Pa</option>
+                        <option value="1.013171">Atmosfære - atm</option>
+                        <option value="0.001">Milibar - mBar</option>
+                        <option value="1">Bar</option>
+                        <option value="0.000980661">Cintimeter Vand - cmH2O</option>
+                        <option value="0.001333227">Milimeter Kviksølv - mmHg</option>
+                        <option value="0.0013332270">Torr</option>
+                        <option value="0.002493766">Inches Vand - inH2O</option>
+                        <option value="0.0338639">Inches Kviksølv - inHg</option>
+                        <option value="0.980392">Kilogram pr. Kvadratcentimeter - kg/cm&sup2;</option>
+                        <option value="0.0689474">Pund pr. Kvadratinch - psi</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convert('inputVacuum','outputVacuum','#vacuumFrom','#vacuumTo')" class="output">
+            </li>
+        </ul>
+
+        <! Angle Calculator >
+        <ul class="cal" id="angleCal" value="angleCal">
+            <h1 style="text-align: center; padding: 0 12%;">Vinkler</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputAngle" class="text" onchange="convert('inputAngle','outputAngle','#angleFrom','#angleTo')">
+                </li>
+                <li class="li3">
+                    <select class="angleFrom" id="angleFrom" onchange="convert('inputAngle','outputAngle','#angleFrom','#angleTo')">
+                        <option value="1">Grader - &deg;</option>
+                        <option value="57.2958">Radianer</option>
+                        <option value="0.9">Nygrader</option>
+                        <option value="0.05625">Mil</option>
+                        <option value="11.25">Point</option>
+                        <option value="0.000277777777777777778">Sekund</option>
+                        <option value="0.016666666666666666667">Minut</option>
+                        <option disabled>-- Cirkeludsnit --</option>
+                        <option value="22.5">1/16 cirkel</option>
+                        <option value="36">1/10 cirkel</option>
+                        <option value="45">1/8 cirkel</option>
+                        <option value="60">1/6 cirkel</option>
+                        <option value="72">1/5 cirkel</option>
+                        <option value="90">1/4 cirkel</option>
+                        <option value="120">1/3 cirkel</option>
+                        <option value="180">1/2 cirkel</option>
+                        <option value="360">Fuld cirkel</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#angleFrom','#angleTo'),convert('inputAngle','outputAngle','#angleFrom','#angleTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputAngle" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="angleTo" id="angleTo" onchange="convert('inputAngle','outputAngle','#angleFrom','#angleTo')">
+                        <option value="1">Grader - &deg;</option>
+                        <option value="57.2958">Radianer</option>
+                        <option value="0.9">Nygrader</option>
+                        <option value="0.05625">Mil</option>
+                        <option value="11.25">Point</option>
+                        <option value="0.000277777777777777778">Sekund</option>
+                        <option value="0.016666666666666666667">Minut</option>
+                        <option disabled>-- Cirkeludsnit --</option>
+                        <option value="22.5">1/16 cirkel</option>
+                        <option value="36">1/10 cirkel</option>
+                        <option value="45">1/8 cirkel</option>
+                        <option value="60">1/6 cirkel</option>
+                        <option value="72">1/5 cirkel</option>
+                        <option value="90">1/4 cirkel</option>
+                        <option value="120">1/3 cirkel</option>
+                        <option value="180">1/2 cirkel</option>
+                        <option value="360">Fuld cirkel</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convert('inputAngle','outputAngle','#angleFrom','#angleTo')" class="output">
+            </li>
+        </ul>
+
+        <! Volume Calculator >
+        <ul class="cal" id="volumeCal" value="volumeCal">
+            <h1 style="text-align: center; padding: 0 12%;">Volumen</h1>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="inputVolume" class="text" onchange="convert('inputVolume','outputVolume','#volumeFrom','#volumeTo')">
+                </li>
+                <li class="li3">
+                    <select class="volumeFrom" id="volumeFrom" onchange="convert('inputVolume','outputVolume','#volumeFrom','#volumeTo')">
+                        <option disabled>-- SI-enheder --</option>
+                        <option value="0.001">Kubikcentimeter - cm&sup3;</option>
+                        <option value="1000">Kubikmeter - m&sup3;</option>
+                        <option value="0.0010">Milliliter - ml</option>
+                        <option value="0.1">Deciliter - dl</option>
+                        <option value="1">Liter - l</option>
+                        <option value="100">Hektoliter - hl</option>
+                        <option disabled>-- Imperial Standard</option>
+                        <option value="0.00492892">Teaspoon - tsp</option>
+                        <option value="0.01478677">Tablespoon - tbs</option>
+                        <option value="0.01638706">Kubikinch - in&sup3;</option>
+                        <option value="0.2365882">Cups - Cup</option>
+                        <option value="28.31685">Kubukfod - ft&sup3;</option>
+                        <option value="158.9873">Oil Barrel - bbl</option>
+                        <option disabled>-- Imperial (US) --</option>
+                        <option value="0.00369669">Dram</option>
+                        <option value="0.02957353">Fluid Ounce (US) - fl.oz.</option>
+                        <option value="0.473176">Pint (US, liquid) - pt</option>
+                        <option value="0.55061">Pint (US, dry) - pt</option>
+                        <option value="0.946353">Quart (US) - qt</option>
+                        <option value="1.10122">Quart (US, liquid) - qt</option>
+                        <option value="3.78541">Gallon (US) - gal</option>
+                        <option value="35.2391">Bushel (US) - bu</option>
+                        <option disabled>-- Imperial (UK) --</option>
+                        <option value="0.02841306">Fluid Ounce (UK) - fl.oz.</option>
+                        <option value="0.568281">Pint (UK) - pt</option>
+                        <option value="1.136523">Quart (UK) - qt</option>
+                        <option value="4.54609">Gallon (UK) - gal</option>
+                        <option value="36.3687">Bushel (UK) - bu</option>
+                    </select>
+                </li>
+            </ul>
+            <li>
+                <a class="to">til</a>
+                <button onclick="switchOptions('#volumeFrom','#volumeTo'),convert('inputVolume','outputVolume','#volumeFrom','#volumeTo')">Skift</button>
+            </li>
+            <ul class="li1">
+                <li class="li2">
+                    <input type="text" id="outputVolume" readonly="true" class="text">
+                </li>
+                <li class="li4">
+                    <select class="volumeTo" id="volumeTo" onchange="convert('inputVolume','outputVolume','#volumeFrom','#volumeTo')">
+                        <option disabled>-- SI-enheder --</option>
+                        <option value="0.001">Kubikcentimeter - cm&sup3;</option>
+                        <option value="1000">Kubikmeter - m&sup3;</option>
+                        <option value="0.0010">Milliliter - ml</option>
+                        <option value="0.1">Deciliter - dl</option>
+                        <option value="1">Liter - l</option>
+                        <option value="100">Hektoliter - hl</option>
+                        <option disabled>-- Imperial Standard</option>
+                        <option value="0.00492892">Teaspoon - tsp</option>
+                        <option value="0.01478677">Tablespoon - tbs</option>
+                        <option value="0.01638706">Kubikinch - in&sup3;</option>
+                        <option value="0.2365882">Cups - Cup</option>
+                        <option value="28.31685">Kubukfod - ft&sup3;</option>
+                        <option value="158.9873">Oil Barrel - bbl</option>
+                        <option disabled>-- Imperial (US) --</option>
+                        <option value="0.00369669">Dram</option>
+                        <option value="0.02957353">Fluid Ounce (US) - fl.oz.</option>
+                        <option value="0.473176">Pint (US, liquid) - pt</option>
+                        <option value="0.55061">Pint (US, dry) - pt</option>
+                        <option value="0.946353">Quart (US) - qt</option>
+                        <option value="1.10122">Quart (US, liquid) - qt</option>
+                        <option value="3.78541">Gallon (US) - gal</option>
+                        <option value="35.2391">Bushel (US) - bu</option>
+                        <option disabled>-- Imperial (UK) --</option>
+                        <option value="0.02841306">Fluid Ounce (UK) - fl.oz.</option>
+                        <option value="0.568281">Pint (UK) - pt</option>
+                        <option value="1.136523">Quart (UK) - qt</option>
+                        <option value="4.54609">Gallon (UK) - gal</option>
+                        <option value="36.3687">Bushel (UK) - bu</option>
+                    </select>
+                </li>
+            </ul>
+            <li class="output">
+                <input type="button" value="Udregn" onClick="convert('inputVolume','outputVolume','#volumeFrom','#volumeTo')" class="output">
+            </li>
+        </ul>
+
+    </ul>
+</body>
+
+</html>
