@@ -1,0 +1,434 @@
+:root {
+    --main-color: lightblue;
+    --non-color: rgb(50,175,0);
+    --half-color: rgb(0,155,255);
+    --metal-color: rgb(125,125,125);
+    --nobel-color: gold;
+    --border-color: darkgray;
+    --text-color: white;
+    --nrText-color: black;
+    --height: 60px;
+    --width: 52px;
+}
+
+body {
+    background-color: var(--main-color);
+}
+
+table.footer {
+    display: inline-block;
+}
+
+td.footer {
+    color: white;
+}
+
+
+
+.collum {
+    background-color: var(--main-color);
+    box-sizing: content-box;
+    width: var(--width);
+    height: var(--height);
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: larger;
+    color: var(--nrText-color);
+    border: 0;
+}
+
+tr.per {
+    height: var(--height);
+}
+
+.row {
+    background-color: var(--main-color);
+    box-sizing: content-box;
+    width: var(--width);
+    height: var(--height);
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: larger;
+    color: var(--nrText-color);
+    border: 0;
+}
+
+.half {
+    background-color: var(--half-color);
+    box-sizing: content-box;
+    width: var(--width);
+    height: var(--height);
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: larger;
+    text-shadow: black 1px 1px;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.non {
+    background-color: var(--non-color);
+    box-sizing: content-box;
+    width: var(--width);
+    height: var(--height);
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: larger;
+    text-shadow: black 1px 1px;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.nobel {
+    background-color: var(--nobel-color);
+    box-sizing: content-box;
+    width: var(--width);
+    height: var(--height);
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: larger;
+    text-shadow: black 1px 1px;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.metal {
+    background-color: var(--metal-color);
+    box-sizing: content-box;
+    width: var(--width);
+    height: var(--height);
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: larger;
+    text-shadow: black 1px 1px;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.star {
+    background-color: var(--main-color);
+    box-sizing: content-box;
+    width: var(--width);
+    height: var(--height);
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: larger;
+    color: var(--nrText-color);
+    border: 0;
+}
+
+td {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+tr.spacer {
+    height: 10px;
+}
+
+div.background {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 0;
+}
+
+
+#infoModal {
+    position: absolute;
+    float: left;
+    display: none;
+    z-index: 1;
+    background-color: red;
+    border: 2px solid black;
+	border-radius: 6px;
+}
+
+h1.infoModal {
+    text-align: center;
+    border: 1px solid black;
+    margin: 0;
+    font-family: sans-serif;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 1px 1px 10px darkred;
+	max-height: 90%;
+	overflow-y: scroll;
+	overflow-x: none;
+}
+
+table.infoModal{
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td.infoModal, th.infoModal, tr.infoModal, tt.infoModal {
+    border: 2px solid black;
+    margin: 0;
+    padding: 2px 4px;
+}
+
+.infoClose {
+    width: 100%;
+    color: white;
+    font-family: sans-serif;
+    font-size: medium;
+    text-shadow: darkred 1px 1px 10px;
+    background-color: red;
+    border: 1px solid black;
+}
+
+
+
+#HModal, #HeModal, #LiModal, #BeModal, #BModal, #CModal, #NModal, #OModal, #FModal, #NeModal, #NaModal, #MgModal, #AlModal, #SiModal, #PModal, #SModal, #ClModal, #ArModal, #KModal, #CaModal, #ScModal, #TiModal, #VModal, #CrModal, #MnModal, #FeModal, #CoModal, #NiModal, #CuModal, #ZnModal, #GaModal, #GeModal, #AsModal, #SeModal, #BrModal, #KrModal, #RbModal, #SrModal, #YModal, #ZrModal, #NbModal, #MoModal, #TcModal, #RuModal, #RhModal, #PdModal, #AgModal, #CdModal, #InModal, #SnModal, #SbModal, #SbModal, #TeModal, #IModal, #XeModal, #CsModal, #BaModal, #LaModal, #CeModal, #PrModal, #NdModal, #PmModal, #SmModal, #EuModal, #GdModal, #TbModal, #DyModal, #HoModal, #ErModal, #TmModal, #YbModal, #LuModal, #HfModal, #TaModal, #WModal, #ReModal, #OsModal, #IrModal, #PtModal, #AuModal, #HgModal, #TlModal, #PbModal, #BiModal, #PoModal, #AtModal, #RnModal, #FrModal, #RaModal, #AcModal, #ThModal, #PaModal, #UModal, #NpModal, #PuModal, #AmModal, #CmModal, #BkModal, #CfModal, #EsModal, #FmModal, #MdModal, #NoModal, #LrModal, #RfModal, #DbModal, #SgModal, #BhModal, #HsModal, #MtModal, #DsModal, #RgModal, #CnModal, #NhModal, #FlModal, #McModal, #LvModal, #TsModal, #OgModal {
+    display: none;
+    position: absolute;
+}
+
+div.nonModal {
+    float: left;
+    z-index: 1;
+    background-color: var(--non-color);
+    border: 1px solid black;
+	margin-bottom: 20px;
+	max-height: 90%;
+	overflow-y: scroll;
+	overflow-x: none;
+}
+
+h1.nonModal {
+    text-align: center;
+    border: 1px solid black;
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bolder;
+    text-shadow: 1px 1px 10px darkgreen;
+}
+
+table.nonModal{
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.nonModal td, .nonModal tt {
+	border: 1px solid black;
+	margin: 0;
+	padding: 2px 4px;
+}
+
+td.nonModal, th.nonModal {
+    border: 2px solid black;
+    margin: 0;
+    padding: 2px 4px;
+}
+
+.nonClose {
+    width: 100%;
+    color: white;
+    font-family: sans-serif;
+    font-size: medium;
+    text-shadow: darkgreen 1px 1px 10px;
+    background-color: var(--non-color);
+    border: 1px solid black;
+}
+
+
+
+div.nobelModal {
+    float: left;
+    z-index: 1;
+    background-color: var(--nobel-color);
+    border: 1px solid black;
+	margin-bottom: 20px;
+	max-height: 90%;
+	overflow-y: scroll;
+	overflow-x: none;
+}
+
+h1.nobelModal {
+    text-align: center;
+    border: 1px solid black;
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bolder;
+    text-shadow: 1px 1px 10px darkgoldenrod;
+}
+
+table.nobelModal{
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.nobelModal td, .nobelModal tt {
+	border: 1px solid black;
+	margin: 0;
+	padding: 2px 4px;
+}
+
+td.nobelModal, th.nobelModal {
+    border: 2px solid black;
+    margin: 0;
+    padding: 2px 4px;
+}
+
+.nobelClose {
+    width: 100%;
+    color: white;
+    font-family: sans-serif;
+    font-size: medium;
+    text-shadow: darkgoldenrod 1px 1px 10px;
+    background-color: var(--nobel-color);
+    border: 1px solid black;
+}
+
+
+
+div.metalModal {
+    float: left;
+    z-index: 1;
+    background-color: var(--metal-color);
+    border: 1px solid black;
+	margin-bottom: 20px;
+	max-height: 90%;
+	overflow-y: scroll;
+	overflow-x: none;
+}
+
+h1.metalModal {
+    text-align: center;
+    border: 1px solid black;
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bolder;
+    text-shadow: 1px 1px 10px black;
+}
+
+table.metalModal{
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.metalModal td, .metalModal tt {
+	border: 1px solid black;
+	margin: 0;
+	padding: 2px 4px;
+}
+
+td.metalModal, th.metalModal {
+    border: 2px solid black;
+    margin: 0;
+    padding: 2px 4px;
+}
+
+.metalClose {
+    width: 100%;
+    color: white;
+    font-family: sans-serif;
+    font-size: medium;
+    text-shadow: black 1px 1px 10px;
+    background-color: var(--metal-color);
+    border: 1px solid black;
+}
+
+
+
+div.halfModal {
+    float: left;
+    z-index: 1;
+    background-color: var(--half-color);
+    border: 1px solid black;
+	margin-bottom: 20px;
+	max-height: 90%;
+	overflow-y: scroll;
+	overflow-x: none;
+}
+
+h1.halfModal {
+    text-align: center;
+    border: 1px solid black;
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bolder;
+    text-shadow: 1px 1px 10px darkblue;
+}
+
+table.halfModal{
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.halfModal td, .halfModal tt {
+	border: 1px solid black;
+	margin: 0;
+	padding: 2px 4px;
+}
+
+td.halfModal, th.halfModal {
+    border: 2px solid black;
+    margin: 0;
+    padding: 2px 4px;
+}
+
+.halfClose {
+    width: 100%;
+    color: white;
+    font-family: sans-serif;
+    font-size: medium;
+    text-shadow: darkblue 1px 1px 10px;
+    background-color: var(--half-color);
+    border: 1px solid black;
+}
+
+
+
+input.help {
+    background-color: black;
+    box-sizing: content-box;
+    width: var(--width);
+    height: 30px;
+    padding: 0;
+    margin: 30px 0 0 0;
+    font-size: medium;
+    font-weight: lighter;
+    color: white;
+    border: 1px solid black;
+}
+
+.element .popup {
+    visibility: hidden;
+    width: 130px;
+	height: 130px;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 8px 8px;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 8%;
+    left: 30%;
+}
+
+.popup.show {
+    visibility: visible;
+    padding: 8px;
+}
